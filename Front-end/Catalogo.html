@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="img/img/KnightOfChaosLogo-2 (1).png" type="image/x-icon">
+  <link rel="stylesheet" href="css/Header.css">
+  <link rel="stylesheet" href="css/Header-login.css">
+  <link rel="stylesheet" href="css/capa-koc.css">
+  <link rel="stylesheet" href="css/lista-kok.css">
+  <link rel="stylesheet" href="css/comen.css">
+
+  <link rel="stylesheet" href="css/footer.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <title>Koc</title>
+
+</head>
+<body>
+  <header class="navbar" id="mainHeader">
+    <div class="navbar-container container">
+      <div class="menu-left">
+        <div class="hamburger-lines" id="hamburger" aria-label="Abrir menu">
+          <span class="line line1"></span>
+          <span class="line line2"></span>
+          <span class="line line3"></span>
+        </div>
+        <ul class="menu-items" id="menu-items">
+          <!-- Link de Login ATUALIZADO -->
+
+          <li><a href="./wikis.html"><i class="fas fa-book"></i> Wiki's</a></li>
+          <li><a href="./projetos.html"><i class="fas fa-code"></i> Projetos</a></li>
+          <li><a href="#audio"><i class="fas fa-headphones" ></i> Audiobook</a></li>
+          <li><a href="#login-modal" class="login-trigger js-login-trigger"><i class="fas fa-user"></i> Login</a></li>
+        </ul>
+      </div>
+      <div class="login-logo">
+        <a href="home.html"><img src="img/img/KnightOfChaosLogo-2 (1).png" alt="Logo" width="99" height="65"></a>
+      </div>
+    </div>
+  </header>
+  <div class="login-modal" id="login-modal">
+    <div class="modal-content">
+      <button class="close-modal" aria-label="Fechar modal">&times;</button>
+
+      <div class="login-tab">
+        <h2>Login</h2>
+        <form class="login-form">
+          <div class="form-group">
+            <label for="username">Usuário:</label>
+            <input type="text" id="username" name="username" required>
+          </div>
+          <div class="form-group">
+            <label for="password">Senha:</label>
+            <input type="password" id="password" name="password" required>
+          </div>
+          <button type="submit" class="login-btn">Entrar</button>
+          <!-- Link Cadastro - IMPORTANTE manter as classes -->
+          <p class="register-link">Não tem conta? <a href="#cadastro" class="switch-tab js-switch-tab">Cadastre-se</a></p>
+        </form>
+      </div>
+      <div class="register-tab" style="display:none">
+        <h2>Cadastro</h2>
+        <form class="register-form">
+          <div class="form-group">
+            <label for="new-username">Usuário:</label>
+            <input type="text" id="new-username" name="new-username" required>
+          </div>
+          <div class="form-group">
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="new-password">Senha:</label>
+            <input type="password" id="new-password" name="new-password" required>
+          </div>
+          <div class="form-group">
+            <label for="confirm-password">Confirme a Senha:</label>
+            <input type="password" id="confirm-password" name="confirm-password" required>
+          </div>
+          <button type="submit" class="login-btn">Cadastrar</button>
+          <!-- Link Login - IMPORTANTE manter as classes -->
+          <p class="login-link">Já tem conta? <a href="#login" class="switch-tab js-switch-tab">Faça login</a></p>
+        </form>
+      </div>
+    </div>
+  </div>
+
+<div class="container-unificado">
+    <!-- Seção do Livro (Colunas) -->
+    <main class="livro-container">
+      <div class="livro-coluna-esquerda">
+        <div class="capa-livro">
+          <img src="img/img/KnightOfChaosCapafix2.png" alt="Capa do Livro" class="imagem-capa">
+          <div class="badge-destaque">Destaque</div>
+        </div>
+      </div>
+      
+      <div class="livro-coluna-direita">
+        <div class="livro-info-box livro-titulo">
+          <h1>Knight of Chaos</h1>
+          <div class="livro-subtitulo">Cavaleiro do caos</div>
+        </div>
+        
+        <div class="livro-info-box livro-metadados">
+          <div class="livro-stat">
+            <i class="fas fa-eye"></i>
+            <span>1.245 visualizações</span>
+          </div>
+          <div class="livro-stat">
+            <i class="fas fa-comment"></i>
+            <span>83 comentários</span>
+          </div>
+          <div class="livro-stat">
+            <i class="fas fa-user-edit"></i>
+            <span>Autor: Glauber1907</span>
+          </div>
+        </div>
+        
+        <div class="livro-info-box livro-descricao">
+          <h2>Sinopse</h2>
+          <p>Um jovem rapaz chamado Fernando tem uma vida extremamente difícil, lutando dia após dia para manter seus estudos para poder ter uma boa profissão e poder ajudar sua família, após ser tramado por seus colegas de faculdade ele perde tudo que demorou tanto para conquistar, ou pelo menos é o que ele pensava. Ele recebe uma grande chance de mudar seu destino ao ser apresentado a um mundo completamente diferente de tudo que ele já viu!</p>
+        </div>
+        
+        <div class="livro-info-box livro-acoes">
+          
+          <button class="btn-ler ler-agora"><i class="fas fa-book-open"></i>
+            <a href="list-cap-koc/cap-01.html">Ler Agora</a>
+            </button>
+                    <button class="btn-favorito"><i class="far fa-bookmark"></i> Favoritar</button>
+          <button class="btn-compartilhar"><i class="fas fa-share-alt"></i> <a href="list-cap-koc/cap-01.html">Compartilhar</a></button>
+        </div>
+      </div>
+    </main>
+    
+
+    <!-- Seção de Capítulos e Comentários -->
+    <div class="story-chapters-container">
+      <!-- Cabeçalho e controles -->
+      <div class="chapters-header">
+        <h2>Capítulos</h2>
+        <div class="chapters-controls">
+          <div class="filter-group">
+            <button class="filter-btn active" data-filter="all">Todos</button>
+            <button class="filter-btn" data-filter="free">Gratuitos</button>
+            <button class="filter-btn" data-filter="paid">Premium</button>
+          </div>
+          <div class="search-box">
+            <i class="fas fa-search"></i>
+            <input type="text" placeholder="Buscar capítulo..." class="search-input">
+          </div>
+        </div>
+      </div>
+    
+      <!-- Lista de capítulos -->
+      <div class="chapters-list">
+        <div class="chapter-header-row">
+          <div class="header-num">N*</div>
+          <div class="header-title">Título</div>
+          <div class="header-date">Data</div>
+          <div class="header-words"><i class="fas fa-file-word"></i> Palavras</div>
+          <div class="header-action"></div>
+        </div>
+      
+        <!-- Capítulo 01 -->
+        <div class="chapter-item free" data-chapter="1" data-date="2019-03-23" data-words="2664">
+          <div class="chapter-num">01</div>
+          <div class="chapter-title">
+            <span class="title-text">(Prólogo) - Sofrer e Viver</span>
+            <span class="badge free">Gratuito</span>
+          </div>
+          <div class="chapter-date">23/03/2019</div>
+          <div class="chapter-words">2.664</div>
+          <div class="chapter-action">
+            <a href="list-cap-koc/cap-01.html" class="read-btn">Ler <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      
+        <!-- Capítulo 02 -->
+        <div class="chapter-item free" data-chapter="2" data-date="2019-03-24" data-words="1666">
+          <div class="chapter-num">02</div>
+          <div class="chapter-title">
+            <span class="title-text">Recruta</span>
+            <span class="badge free">Gratuito</span>
+          </div>
+          <div class="chapter-date">24/03/2019</div>
+          <div class="chapter-words">1.666</div>
+          <div class="chapter-action">
+            <a href="/ler/capitulo-02" class="read-btn">Ler <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      
+        <!-- Capítulo 03 -->
+        <div class="chapter-item free" data-chapter="3" data-date="2019-03-25" data-words="1737">
+          <div class="chapter-num">03</div>
+          <div class="chapter-title">
+            <span class="title-text">Engano</span>
+            <span class="badge free">Gratuito</span>
+          </div>
+          <div class="chapter-date">25/03/2019</div>
+          <div class="chapter-words">1.737</div>
+          <div class="chapter-action">
+            <a href="/ler/capitulo-03" class="read-btn">Ler <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      
+        <!-- Capítulo 04 -->
+        <div class="chapter-item free" data-chapter="4" data-date="2019-03-27" data-words="2060">
+          <div class="chapter-num">04</div>
+          <div class="chapter-title">
+            <span class="title-text">Superando</span>
+            <span class="badge free">Gratuito</span>
+          </div>
+          <div class="chapter-date">27/03/2019</div>
+          <div class="chapter-words">2.060</div>
+          <div class="chapter-action">
+            <a href="/ler/capitulo-04" class="read-btn">Ler <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      
+        <!-- Capítulo 05 -->
+        <div class="chapter-item free" data-chapter="5" data-date="2019-03-30" data-words="1751">
+          <div class="chapter-num">05</div>
+          <div class="chapter-title">
+            <span class="title-text">Claud</span>
+            <span class="badge free">Gratuito</span>
+          </div>
+          <div class="chapter-date">30/03/2019</div>
+          <div class="chapter-words">1.751</div>
+          <div class="chapter-action">
+            <a href="/ler/capitulo-05" class="read-btn">Ler <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      
+        <!-- Capítulo 06 -->
+        <div class="chapter-item free" data-chapter="6" data-date="2019-04-22" data-words="2082">
+          <div class="chapter-num">06</div>
+          <div class="chapter-title">
+            <span class="title-text">Avalon</span>
+            <span class="badge free">Gratuito</span>
+          </div>
+          <div class="chapter-date">22/04/2019</div>
+          <div class="chapter-words">2.082</div>
+          <div class="chapter-action">
+            <a href="/ler/capitulo-06" class="read-btn">Ler <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      
+        <!-- Capítulo 07 -->
+        <div class="chapter-item free" data-chapter="7" data-date="2019-04-04" data-words="2748">
+          <div class="chapter-num">07</div>
+          <div class="chapter-title">
+            <span class="title-text">Cópia</span>
+            <span class="badge free">Gratuito</span>
+          </div>
+          <div class="chapter-date">04/04/2019</div>
+          <div class="chapter-words">2.748</div>
+          <div class="chapter-action">
+            <a href="/ler/capitulo-07" class="read-btn">Ler <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      
+        <!-- Capítulo 08 -->
+        <div class="chapter-item free" data-chapter="8" data-date="2019-04-07" data-words="2526">
+          <div class="chapter-num">08</div>
+          <div class="chapter-title">
+            <span class="title-text">Talento</span>
+            <span class="badge free">Gratuito</span>
+          </div>
+          <div class="chapter-date">07/04/2019</div>
+          <div class="chapter-words">2.526</div>
+          <div class="chapter-action">
+            <a href="/ler/capitulo-08" class="read-btn">Ler <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      
+        <!-- Capítulo 09 -->
+        <div class="chapter-item free" data-chapter="9" data-date="2019-04-10" data-words="3096">
+          <div class="chapter-num">09</div>
+          <div class="chapter-title">
+            <span class="title-text">Equipe E2</span>
+            <span class="badge free">Gratuito</span>
+          </div>
+          <div class="chapter-date">10/04/2019</div>
+          <div class="chapter-words">3.096</div>
+          <div class="chapter-action">
+            <a href="/ler/capitulo-09" class="read-btn">Ler <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      
+        <!-- Capítulo 10 -->
+        <div class="chapter-item free" data-chapter="10" data-date="2019-04-15" data-words="2230">
+          <div class="chapter-num">10</div>
+          <div class="chapter-title">
+            <span class="title-text">Campo de Treinamento</span>
+            <span class="badge free">Gratuito</span>
+          </div>
+          <div class="chapter-date">15/04/2019</div>
+          <div class="chapter-words">2.230</div>
+          <div class="chapter-action">
+            <a href="/ler/capitulo-10" class="read-btn">Ler <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      
+        <!-- Capítulo 11 -->
+        <div class="chapter-item free" data-chapter="11" data-date="2019-04-15" data-words="1926">
+          <div class="chapter-num">11</div>
+          <div class="chapter-title">
+            <span class="title-text">Conflito</span>
+            <span class="badge free">Gratuito</span>
+          </div>
+          <div class="chapter-date">15/04/2019</div>
+          <div class="chapter-words">1.926</div>
+          <div class="chapter-action">
+            <a href="/ler/capitulo-11" class="read-btn">Ler <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      
+        <!-- Capítulo 12 -->
+        <div class="chapter-item free" data-chapter="12" data-date="2019-04-21" data-words="2203">
+          <div class="chapter-num">12</div>
+          <div class="chapter-title">
+            <span class="title-text">Lute!</span>
+            <span class="badge free">Gratuito</span>
+          </div>
+          <div class="chapter-date">21/04/2019</div>
+          <div class="chapter-words">2.203</div>
+          <div class="chapter-action">
+            <a href="/ler/capitulo-12" class="read-btn">Ler <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+    
+      <!-- Paginação -->
+      <div class="pagination">
+        <button class="page-btn prev" disabled><i class="fas fa-chevron-left"></i></button>
+        <button class="page-btn active">1</button>
+        <button class="page-btn">2</button>
+        <span class="page-dots">...</span>
+        <button class="page-btn">3</button>
+        <button class="page-btn next"><i class="fas fa-chevron-right"></i></button>
+      </div>
+    </div>
+
+
+
+
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-column">
+          <h2>Contato</h2>
+          <p><img src="img/Vector@2x.png" alt="Telefone" class="icon">(00) 1234-5678</p>
+          <p><img src="img/bxs-envelope 2.png" alt="Email" class="icon">exemplo@email.com</p>
+          <p><img src="img/bxs-pin 2.png" alt="Endereço" class="icon">Rua Exemplo, 123</p>
+      </div>
+  
+      <div class="footer-column">
+          <h2>Informações</h2>
+          <a href="#"><img src="img/bxl-discord-alt 2.png" alt="Discord" class="icon">Discord</a>
+          <a href="#"><img src="img/Vector (1).png" alt="Plataforma" class="icon">Plataforma</a>
+          <a href="#"><img src="img/img/bx-file 3.png" alt="Termos e Condições" class="icon">Termos e Condições</a>
+      </div>
+  
+      <div class="footer-column">
+          <h2 class="h2-none">Siga-nos</h2>
+          <div class="social-icons">
+              <a href="#"><img src="img/bxl-instagram 2 (8).png" alt="Instagram"></a>
+              <a href="#"><img src="img/Vector.png" alt="YouTube"></a>
+              <a href="#"><img src="img/bxl-facebook-circle 2.png" alt="Facebook"></a>
+          </div>
+          <div class="logoss">
+              <img src="img/img/KnightOfChaosLogo-2 (1).png" alt="Logo">
+          </div>
+      </div>
+    </div>
+  </footer>
+  <script src="js/menu.js"></script>
+  <script src="js/header-login.js"></script>
+  <script src="js/txt.js"></script>
+  <script src="js/lista.js"></script>
+
+
+</body>
+</html>

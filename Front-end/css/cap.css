@@ -1,0 +1,47 @@
+.titulo-section {
+  text-align: center;
+  position: relative;
+  padding: 5px 0;
+}
+
+.titulo-principal {
+  font-size: 2.5rem;
+  color: white;
+  margin-bottom: 20px;
+  min-height: 60px;
+}
+
+.web-novel {
+  color: #f59e0b;
+}
+
+.cursor {
+  display: inline-block;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.divisor-central {
+  display: none;
+}
+
+@media (min-width: 800px) {
+  .divisor-central {
+    display: block;
+    width: 50%;
+    height: 5px;
+    background: linear-gradient(90deg, transparent, #686565, transparent);
+    margin: 0 auto;
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out 3.5s forwards;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

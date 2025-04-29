@@ -1,0 +1,76 @@
+/* Estrutura Base (Mantendo seu estilo original) */
+.carrossel-wrapper {
+  display: flex;
+  justify-content: center; /* Centraliza horizontalmente */
+  width: 100%;
+  padding: 20px 0;
+  
+}
+
+.carrossel-container {
+  display: flex;
+  align-items: center; /* Centraliza verticalmente */
+  justify-content: center; /* Centraliza horizontalmente */
+  gap: 10px;
+  width: 100%;
+  max-width: 710px; /* Ajuste conforme necessário */
+  margin: 0 auto; /* Centraliza o container */
+}
+
+/* Carrossel Principal - Agora responsivo */
+.carrossel {
+  
+  width: 100%;
+  max-width: 800px; /* Largura máxima para desktop */
+  position: relative;
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+.carrossel-slides {
+  display: flex;
+  height: 100%;
+  transition: transform 0.5s ease;
+}
+
+.slide {
+  min-width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+/* Imagens - Mantendo proporção SEM distorção */
+.carrossel-imagem {
+  width: 100%;
+  height: 100%;
+  border-radius: 17px;
+  object-fit: contain;
+  background: white;
+  display: block;
+  border-radius: 20px;
+}
+.carrossel-imagem img{
+
+}
+/* Botões - Estilo mais profissional */
+.carrossel-botao {
+  background: #ffffff00;
+  color: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+  flex-shrink: 0;
+}
+
+
+
+/* Responsividade - Adaptação perfeita para mobile */
+
+

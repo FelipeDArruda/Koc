@@ -1,0 +1,268 @@
+/* Estilos Base */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  transition: background-color 0.3s, color 0.3s;
+  
+}
+
+/* Componente: Container Principal */
+.reader-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: inherit;
+}
+
+/* Componente: Cabeçalho do Capítulo */
+.chapter-header {
+  text-align: center;
+  margin-bottom: 30px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid;
+}
+
+.chapter-title {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.novel-title {
+  font-size: 18px;
+  margin-bottom: 10px;
+  opacity: 0.8;
+}
+
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.nav-button {
+  padding: 8px 15px;
+  background-color: #4a6baf;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+.nav-button:hover {
+  background-color: #3a5a9f;
+}
+
+/* Componente: Conteúdo do Capítulo */
+.chapter-content {
+  font-size: 16px;
+  margin-bottom: 40px;
+  transition: font-size 0.2s;
+}
+
+.chapter-content p {
+  margin-bottom: 20px;
+  text-align: justify;
+}
+
+/* Componente: Configurações de Leitura */
+.reader-settings {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #4a6baf;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  cursor: pointer;
+  z-index: 100;
+  transition: transform 0.2s;
+}
+
+.reader-settings:hover {
+  transform: scale(1.1);
+}
+
+.reader-settings svg {
+  color: white;
+}
+
+.settings-panel {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  background-color: inherit;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  display: none;
+  z-index: 100;
+  width: 250px;
+  border: 1px solid;
+}
+
+.settings-panel h3 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+.setting-option {
+  margin-bottom: 15px;
+}
+
+.setting-option label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.font-size-controls {
+  display: flex;
+  align-items: center;
+}
+
+.font-size-btn {
+  width: 30px;
+  height: 30px;
+  border: 1px solid;
+  background-color: inherit;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.font-size-btn:hover {
+  background-color: rgba(0,0,0,0.1);
+}
+
+.font-size-display {
+  margin: 0 10px;
+  width: 40px;
+  text-align: center;
+}
+
+.theme-selector {
+  display: flex;
+  gap: 10px;
+}
+
+.theme-option {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.theme-option:hover {
+  transform: scale(1.1);
+}
+
+.theme-option.selected {
+  border-color: #4a6baf;
+  transform: scale(1.1);
+}
+
+/* Componente: Rodapé de Navegação */
+.chapter-footer {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid;
+}
+
+/* Temas */
+.theme-dark {
+  background-color: #222;
+  color: #ddd;
+  border-color: #444;
+}
+
+.theme-dark .chapter-header,
+.theme-dark .chapter-footer {
+  border-color: #444;
+}
+
+.theme-dark .chapter-title {
+  color: #fff;
+}
+
+.theme-dark .novel-title {
+  color: #aaa;
+}
+
+.theme-dark .settings-panel {
+  border-color: #444;
+}
+
+.theme-dark .font-size-btn {
+  border-color: #444;
+  color: #ddd;
+}
+
+.theme-light {
+  background-color: #f9f9f9;
+  color: #333;
+  border-color: #e1e1e1;
+}
+
+.theme-light .chapter-header,
+.theme-light .chapter-footer {
+  border-color: #e1e1e1;
+}
+
+.theme-light .chapter-title {
+  color: #222;
+}
+
+.theme-light .novel-title {
+  color: #555;
+}
+
+.theme-light .settings-panel {
+  border-color: #e1e1e1;
+}
+
+.theme-light .font-size-btn {
+  border-color: #ddd;
+  color: #333;
+}
+
+.theme-sepia {
+  background-color: #f4ecd8;
+  color: #5b4636;
+  border-color: #d9c7a7;
+}
+
+.theme-sepia .chapter-header,
+.theme-sepia .chapter-footer {
+  border-color: #d9c7a7;
+}
+
+.theme-sepia .chapter-title {
+  color: #3a2e21;
+}
+
+.theme-sepia .novel-title {
+  color: #7a6b5b;
+}
+
+.theme-sepia .settings-panel {
+  border-color: #d9c7a7;
+}
+
+.theme-sepia .font-size-btn {
+  border-color: #d9c7a7;
+  color: #5b4636;
+}

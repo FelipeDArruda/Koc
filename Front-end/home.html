@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="img/img/KnightOfChaosLogo-2 (1).png" type="image/x-icon">
+  <link rel="stylesheet" href="Global.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <title>Koc</title>
+
+</head>
+
+<body>
+  <header class="navbar" id="mainHeader">
+    <div class="navbar-container container">
+      <div class="menu-left">
+        <div class="hamburger-lines" id="hamburger" aria-label="Abrir menu">
+          <span class="line line1"></span>
+          <span class="line line2"></span>
+          <span class="line line3"></span>
+        </div>
+        <ul class="menu-items" id="menu-items">
+          <!-- Link de Login ATUALIZADO -->
+
+          <li><a href="./wikis.html"><i class="fas fa-book"></i> Wiki's</a></li>
+          <li><a href="./projetos.html"><i class="fas fa-code"></i> Projetos</a></li>
+          <li><a href="#audio"><i class="fas fa-headphones" ></i> Audiobook</a></li>
+          <li><a href="#login-modal" class="login-trigger js-login-trigger"><i class="fas fa-user"></i> Login</a></li>
+        </ul>
+      </div>
+      <div class="login-logo">
+        <a href="home.html"><img src="img/img/KnightOfChaosLogo-2 (1).png" alt="Logo" width="99" height="65"></a>
+      </div>
+    </div>
+  </header>
+  <div class="login-modal" id="login-modal">
+    <div class="modal-content">
+      <button class="close-modal" aria-label="Fechar modal">&times;</button>
+
+      <div class="login-tab">
+        <h2>Login</h2>
+        <form class="login-form">
+          <div class="form-group">
+            <label for="username">Usuário:</label>
+            <input type="text" id="username" name="username" required>
+          </div>
+          <div class="form-group">
+            <label for="password">Senha:</label>
+            <input type="password" id="password" name="password" required>
+          </div>
+          <button type="submit" class="login-btn">Entrar</button>
+          <!-- Link Cadastro - IMPORTANTE manter as classes -->
+          <p class="register-link">Não tem conta? <a href="#cadastro" class="switch-tab js-switch-tab">Cadastre-se</a></p>
+        </form>
+      </div>
+      <div class="register-tab" style="display:none">
+        <h2>Cadastro</h2>
+        <form class="register-form">
+          <div class="form-group">
+            <label for="new-username">Usuário:</label>
+            <input type="text" id="new-username" name="new-username" required>
+          </div>
+          <div class="form-group">
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="new-password">Senha:</label>
+            <input type="password" id="new-password" name="new-password" required>
+          </div>
+          <div class="form-group">
+            <label for="confirm-password">Confirme a Senha:</label>
+            <input type="password" id="confirm-password" name="confirm-password" required>
+          </div>
+          <button type="submit" class="login-btn">Cadastrar</button>
+          <!-- Link Login - IMPORTANTE manter as classes -->
+          <p class="login-link">Já tem conta? <a href="#login" class="switch-tab js-switch-tab">Faça login</a></p>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+  <div class="carrossel-wrapper">
+    <div class="carrossel-container">
+      <button class="carrossel-botao botao-anterior" aria-label="Voltar">
+        <i class="fas fa-chevron-left"></i>
+      </button>
+
+      <div class="carrossel">
+        <div class="carrossel-slides">
+          <div class="slide">
+            <img src="front-img/KnightOfChaosBannerfix.png" alt="Imagem 1" class="carrossel-imagem">
+          </div>
+          <div class="slide">
+            <img src="front-img/image.png" alt="Imagem 2" class="carrossel-imagem">
+          </div>
+          <div class="slide">
+            <img src="front-img/KnightOfChaosBannerfix.png" alt="Imagem 3" class="carrossel-imagem">
+          </div>
+        </div>
+      </div>
+
+      <button class="carrossel-botao botao-proximo" aria-label="Avançar">
+        <i class="fas fa-chevron-right"></i>
+      </button>
+    </div>
+  </div>
+
+  <section class="titulo-section">
+    <h1 class="titulo-principal">
+      <span id="typewriter"></span>
+      <span class="cursor">|</span>
+    </h1>
+    <div class="divisor-central"></div>
+  </section>
+
+
+  <section id="sobre" class="about-section hero-actions">
+    <div class="container">
+        <div class="about-grid">
+            <!-- Coluna da Foto -->
+            <div class="about-photo">
+                <div class="photo-frame">
+                    <img src="front-img/Picsart_23-10-14_11-37-53-313_1.png" alt="Foto do Arruda" loading="lazy">
+                    <div class="photo-decoration"></div>
+                    <div class="photo-glare"></div> <!-- Novo efeito de glare -->
+                </div>
+            </div>
+            
+            <!-- Coluna do Conteúdo -->
+            <div class="about-content">
+                <div class="section-subtitle">
+                    <span class="subtitle-accent">//</span>obra-sinopse
+                </div>
+                
+                <div class="obra-sinopse text-accent">
+                    <p>Fernando é um jovem que carrega o peso do mundo nos ombros. Entre aulas exaustivas, empregos precários e noites maldormidas, ele luta para escapar do ciclo de miséria que aprisiona sua família. Seu único farol? A faculdade — um suposto portal para um futuro melhor. Mas quando colegas invejosos arquitetam sua queda, tudo desmorona: sua vaga, sua dignidade, sua última esperança.</p>
+  
+                
+                    <div class="hero-buttons" style="margin-top: 30px;">
+                      <a href="Catalogo.html" class="btn btn-professional">
+                          <span class="btn-text">Acessar a Matriz</span>
+                          <i class="fas fa-arrow-right"></i>
+                      </a>
+                  </div>
+            </div>
+        </div>
+    </div>
+</section>
+  
+
+  <div class="releases-container">
+    <!-- Título adicionado -->
+    <h2 class="section-title">Livros do autor</h2>
+    
+    <!-- Card 1 -->
+    <div class="release-card">
+      <img src="front-img/DreamShaper_32_blond_man_long_hair_very_big_nose_black_armor_a_0.jpg" class="manga-cover" alt="Capa Arthur, O Híbrido">
+      <div class="card-content">
+        <a href="Catalogo.html" class="clickable-title">
+          <h3 class="manga-title">APXX, lorem</h3>
+        </a>
+        <a href="#" class="clickable-subtitle">
+          <p class="manga-subtitle">Glau glau</p>
+        </a>
+        <div class="rating">★★★★☆ 4.7</div>
+        <a href="list-cap-koc/cap-01.html" class="clickable-chapter">
+          <div class="chapter-container">
+            <p class="chapter-info">Capítulo 70</p>
+            <p class="time-ago">15 segundos atrás</p>
+          </div>
+        </a>
+        <a href="list-cap-koc/cap-01.html" class="clickable-chapter">
+          <div class="chapter-container">
+            <p class="chapter-info">Capítulo 89</p>
+            <p class="time-ago">14/04/2025</p>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="release-card">
+      <img src="https://illusia.com.br/wp-content/uploads/2019/03/Koc-Illusia-webp.webp" class="manga-cover" alt="Capa Knight Of Chaos">
+      <div class="card-content">
+        <a href="Catalogo.html" class="clickable-title">
+          <h3 class="manga-title">Knight Of Chaos</h3>
+        </a>
+        <a href="list-cap-koc/cap-01.html" class="clickable-subtitle">
+          <p class="manga-subtitle">Glau glau</p>
+        </a>
+        <div class="rating">★★★★★ 4.9</div>
+        <a href="list-cap-koc/cap-01.html" class="clickable-chapter">
+          <div class="chapter-container">
+            <p class="chapter-info">Capítulo 156</p>
+            <p class="time-ago">3 minutos atrás</p>
+          </div>
+        </a>
+        <a href="#" class="clickable-chapter">
+          <div class="chapter-container">
+            <p class="chapter-info">Capítulo 154</p>
+            <p class="time-ago">22/04/2025</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="titulo-container">
+    <h1 class="titulo">Audiobook</h1>
+    <div class="divisor"></div>
+</div>
+
+
+  <div class="you-container" id="audio">
+    
+    <!-- Card 1 - Capítulo 1 -->
+    <div class="you-card" data-yt-id="VIDEO_ID_1">
+      <div class="you-hover-text">Capitulo 01</div>
+      <img class="you-card-image" alt="Thumbnail do YouTube">
+      <div class="you-card-content">
+        <div class="you-card-title">Capitulo 01</div>
+        <div class="you-card-subtitle">Comece agora a aventurar de fernando</div>
+        <a href="#" class="you-play-button">PLAY</a>
+      </div>
+    </div>
+
+    <!-- Card 2 - Trailer -->
+    <div class="you-card" data-yt-id="VIDEO_ID_2">
+      <div class="you-hover-text"></div>
+      <img class="you-card-image" alt="Thumbnail do YouTube">
+      <div class="you-card-content">
+        <div class="you-card-title"></div>
+        <div class="you-card-subtitle"></div>
+        <a href="#" class="you-play-button">PLAY</a>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <div class="footer-container">
+      <div class="footer-column">
+          <h2>Contato</h2>
+          <p><img src="img/Vector@2x.png" alt="Telefone" class="icon">(00) 1234-5678</p>
+          <p><img src="img/bxs-envelope 2.png" alt="Email" class="icon">exemplo@email.com</p>
+          <p><img src="img/bxs-pin 2.png" alt="Endereço" class="icon">Rua Exemplo, 123</p>
+      </div>
+  
+      <div class="footer-column">
+          <h2>Informações</h2>
+          <a href="#"><img src="img/bxl-discord-alt 2.png" alt="Discord" class="icon">Discord</a>
+          <a href="#"><img src="img/Vector (1).png" alt="Plataforma" class="icon">Plataforma</a>
+          <a href="#"><img src="img/img/bx-file 3.png" alt="Termos e Condições" class="icon">Termos e Condições</a>
+      </div>
+  
+      <div class="footer-column">
+          <h2 class="h2-none">Siga-nos</h2>
+          <div class="social-icons">
+              <a href="#"><img src="img/bxl-instagram 2 (8).png" alt="Instagram"></a>
+              <a href="#"><img src="img/Vector.png" alt="YouTube"></a>
+              <a href="#"><img src="img/bxl-facebook-circle 2.png" alt="Facebook"></a>
+          </div>
+          <div class="logoss">
+              <img src="img/img/KnightOfChaosLogo-2 (1).png" alt="Logo">
+          </div>
+      </div>
+    </div>
+  </footer>
+  <script src="js/menu.js"></script>
+  <script src="js/header-login.js"></script>
+  <script src="js/carousel.js"></script>
+  <script src="js/txt.js"></script>
+  <script src="js/you.js"></script>

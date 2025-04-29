@@ -1,0 +1,374 @@
+.story-chapters-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+  background: rgba(20, 20, 30, 0.8);
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.chapters-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.chapters-header h2 {
+  color: #fff;
+  font-size: 1.8rem;
+  margin: 0;
+}
+
+.chapters-controls {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.filter-group {
+  display: flex;
+  gap: 8px;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 5px;
+  border-radius: 30px;
+}
+
+.filter-btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 20px;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.3s;
+}
+
+.filter-btn.active {
+  background: #4a6fa5;
+  color: white;
+  font-weight: 500;
+}
+
+.search-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-box i {
+  position: absolute;
+  left: 12px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.search-input {
+  padding: 8px 15px 8px 35px;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  color: white;
+  width: 200px;
+  transition: all 0.3s;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #4a6fa5;
+  width: 250px;
+}
+
+/* Lista de capítulos */
+.chapters-list {
+  margin: 20px 0;
+}
+
+.chapter-header-row, .chapter-item {
+  display: grid;
+  grid-template-columns: 50px 3fr 100px 100px 120px;
+  align-items: center;
+  padding: 12px 15px;
+  gap: 15px;
+}
+
+.chapter-header-row {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 10px;
+}
+
+.chapter-item {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 8px;
+  margin-bottom: 8px;
+  transition: all 0.3s;
+  position: relative;
+}
+
+.chapter-item:hover {
+  background: rgba(255, 255, 255, 0.07);
+  transform: translateY(-2px);
+}
+
+.chapter-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: #4a6fa5;
+  border-radius: 8px 0 0 8px;
+}
+
+.chapter-num {
+  font-weight: 600;
+  color: #4a6fa5;
+  text-align: center;
+}
+
+.chapter-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.title-text {
+  color: white;
+  font-weight: 500;
+}
+
+.badge {
+  font-size: 0.7rem;
+  padding: 3px 8px;
+  border-radius: 10px;
+  font-weight: 500;
+}
+
+.badge.free {
+  background: rgba(76, 175, 80, 0.2);
+  color: #4CAF50;
+}
+
+.badge.premium {
+  background: rgba(255, 193, 7, 0.2);
+  color: #FFC107;
+}
+
+.chapter-date, .chapter-views {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+}
+
+.read-btn {
+  padding: 8px 15px;
+  background: rgba(74, 111, 165, 0.2);
+  border: 1px solid #4a6fa5;
+  color: white;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.9rem;
+  justify-self: end;
+}
+
+.read-btn:hover {
+  background: #4a6fa5;
+}
+
+.premium-btn {
+  background: rgba(255, 193, 7, 0.1);
+  border-color: #FFC107;
+  color: #FFC107;
+}
+
+.premium-btn:hover {
+  background: rgba(255, 193, 7, 0.2);
+}
+
+/* Paginação */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 30px;
+}
+
+.page-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.05);
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+}
+
+.page-btn.active {
+  background: #4a6fa5;
+  font-weight: bold;
+}
+
+.page-btn:not(.active):not(:disabled):hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.page-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.page-dots {
+  color: rgba(255, 255, 255, 0.5);
+  padding: 0 5px;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .chapter-header-row, .chapter-item {
+    grid-template-columns: 40px 2fr 1fr auto;
+  }
+  
+  .header-date, .chapter-date {
+    display: none;
+  }
+  
+  .search-input {
+    width: 160px;
+  }
+  
+  .search-input:focus {
+    width: 180px;
+  }
+}
+
+@media (max-width: 480px) {
+  .chapters-controls {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .filter-group {
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  .search-box {
+    width: 100%;
+  }
+  
+  .search-input {
+    width: 100%;
+  }
+  
+  .chapter-header-row, .chapter-item {
+    grid-template-columns: 30px 2fr auto;
+  }
+  
+  .header-views, .chapter-views {
+    display: none;
+  }
+  
+  .read-btn {
+    padding: 6px 10px;
+    font-size: 0.8rem;
+  }
+}
+/* Adicione ao CSS */
+.chapter-item {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.chapter-item:hover {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.read-btn i {
+  transition: transform 0.3s;
+}
+
+.read-btn:hover i {
+  transform: translateX(3px);
+}
+
+/* Adicione isso ao seu CSS existente */
+
+/* Estilo para contagem de palavras */
+.header-words, .chapter-words {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.header-words i {
+  margin-right: 5px;
+}
+
+/* Melhorias nos botões de leitura */
+.read-btn {
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 15px;
+  background: rgba(74, 111, 165, 0.2);
+  border: 1px solid #4a6fa5;
+  color: white;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-size: 0.9rem;
+  gap: 5px;
+}
+
+.read-btn:hover {
+  background: #4a6fa5;
+  transform: translateX(3px);
+}
+
+.read-btn i {
+  transition: transform 0.2s;
+}
+
+.read-btn:hover i {
+  transform: translateX(2px);
+}
+
+.premium-btn {
+  background: rgba(255, 193, 7, 0.1);
+  border-color: #FFC107;
+  color: #FFC107;
+}
+
+.premium-btn:hover {
+  background: rgba(255, 193, 7, 0.2);
+  color: #FFC107;
+}
+
+/* Destaque para o prólogo */
+.chapter-item[data-chapter="1"] .chapter-num {
+  color: #FFC107;
+  font-weight: bold;
+}
+
+/* Responsividade para contagem de palavras */
+@media (max-width: 768px) {
+  .chapter-header-row, .chapter-item {
+    grid-template-columns: 50px 2fr 100px auto;
+  }
+  
+  .header-words, .chapter-words {
+    display: none;
+  }
+}
