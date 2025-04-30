@@ -1,4 +1,4 @@
-.releases-container {
+.projetos-container {
   width: 100%;
   max-width: 800px;
   margin: 0px auto;
@@ -138,76 +138,168 @@
 /* Media Query para telas menores que 700px */
 /* Versão Mobile (menos de 700px) */
 @media (max-width: 700px) {
-  .release-card {
-    width: 80%;
-    max-width: 180px; /* Largura fixa do card */
-    height: 520px; /* Altura fixa */
-    display: flex;
-    flex-direction: column;
-    background-color: #35353c;
-    border-radius: 10px;
-    overflow: hidden;
-    margin: 0 5px; /* Espaço entre cards */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    flex-shrink: 0; /* Impede que o card encolha */
+     /* CONTAINER PRINCIPAL */
+     .projetos-container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
   }
   
-  .manga-cover {
-    width: 160px; /* Largura fixa */
-    height: 210px; /* Altura fixa */
-    object-fit: cover; /* Corta a imagem mantendo proporção */
-    object-position: center; /* Foca no centro da imagem */
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+  /* TÍTULO */
+  .titulo-container {
+      text-align: center;
+      margin-bottom: 30px;
   }
-
-  /* Restante do CSS permanece igual ao anterior */
+  
+  .titulo a {
+      color: #FFC107;
+      text-decoration: none;
+      font-size: 2rem;
+      transition: color 0.3s;
+      display: inline-block;
+  }
+  
+  .titulo a:hover {
+      color: #f8d776;
+  }
+  
+  .titulo i {
+      margin-left: 10px;
+  }
+  
+  /* CONTAINER DE ROLAGEM */
+  .cards-scroll-container {
+      width: 100%;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      padding-bottom: 15px;
+  }
+  
+  .cards-scroll-container::-webkit-scrollbar {
+      display: none;
+  }
+  
+  /* LINHA DE CARDS */
+  .cards-wrapper {
+      display: inline-flex;
+      gap: 25px;
+      min-width: min-content;
+      padding: 5px;
+  }
+  
+  /* CARD INDIVIDUAL */
+  .release-card {
+      flex: 0 0 180px;
+      background-color: #35353c;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 10px;
+  }
+  
+  .release-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+  }
+  
+  /* IMAGEM */
+  .manga-cover {
+      width: 160px;
+      height: 210px;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 6px;
+      margin-top: 10px;
+      border: 2px solid #2a2a2a;
+      transition: transform 0.3s;
+  }
+  
+  .release-card:hover .manga-cover {
+      transform: scale(1.03);
+  }
+  
+  /* CONTEÚDO DO CARD */
   .card-content {
-    padding: 12px;
-    text-align: center;
+      padding: 12px;
+      width: 100%;
   }
   
   .manga-title {
-    font-size: 0.9rem;
-    margin: 5px 0;
-    color: #f1f1f1;
-    font-weight: bold;
-    line-height: 0,8;
-  }
-  
-  .manga-subtitle {
-    font-size: 0.75rem;
-    color: #FFC107;
-    margin-bottom: 10px;
-    text-align: center;
-    font-style: italic;
+      font-size: 1rem;
+      color: #f1f1f1;
+      margin: 5px 0;
+      text-align: center;
+      line-height: 1.2;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
   }
   
   .rating {
-    display: flex;
-    justify-content: center;
-    font-size: 0.9rem;
-    color: #FFC107;
-    margin-bottom: 12px;
+      color: #FFC107;
+      text-align: center;
+      margin: 10px 0;
+      font-size: 0.9rem;
   }
   
   .chapter-container {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    padding: 8px 0;
-    border-bottom: 1px solid #444;
+      padding: 8px 0;
+      border-bottom: 1px solid #444;
   }
   
   .chapter-info {
-    font-size: 0.8rem;
-    color: #f1f1f1;
-    font-weight: bold;
+      font-size: 0.85rem;
+      color: #f1f1f1;
+      font-weight: bold;
   }
   
   .time-ago {
-    font-size: 0.7rem;
-    color: #aaa;
+      font-size: 0.75rem;
+      color: #aaa;
+  }
+  
+  /* LINKS CLICÁVEIS */
+  .clickable-title, .clickable-chapter {
+      text-decoration: none;
+  }
+  
+  .clickable-title:hover .manga-title {
+      color: #f8d776;
+  }
+  
+  .clickable-chapter:hover .chapter-container {
+      background-color: #3e3e46;
+  }
+  
+  .clickable-chapter:hover .chapter-info {
+      color: #FFC107;
+  }
+  
+  /* RESPONSIVIDADE */
+  @media (max-width: 830px) {
+      .projetos-container {
+          padding: 20px 15px;
+      }
+  }
+  
+  @media (max-width: 700px) {
+      .release-card {
+          flex: 0 0 160px;
+      }
+      
+      .manga-cover {
+          width: 140px;
+          height: 180px;
+      }
+      
+      .cards-wrapper {
+          gap: 15px;
+      }
   }
 }
 
