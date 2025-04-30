@@ -1,11 +1,28 @@
 .releases-container {
   width: 100%;
   max-width: 800px;
-  margin: 0 auto;
-  padding: 15px;
+  margin: 0px auto;
+  padding: 2px;
   font-family: 'Segoe UI', sans-serif;
-  background-color: #;
+  background-color: transparent;
 }
+
+.cards-wrapper {
+  display: flex;
+  gap: 15px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+}
+
+.cards-wrapper::-webkit-scrollbar {
+  height: 5px;
+}
+
+.cards-wrapper::-webkit-scrollbar-thumb {
+  background-color: #555;
+  border-radius: 10px;
+}
+
 .section-title {
   color: #f1f1f1;
   font-size: 1.5rem;
@@ -13,13 +30,16 @@
   padding-left: 10px;
   font-weight: 600;
 }
+
 .release-card {
-  display: flex; /* Layout flex para capa + conteúdo */
+  flex: 0 0 calc(50% - 8px);
+  display: flex;
+  flex-direction: row; /* Padrão: imagem ao lado do conteúdo */
   gap: 12px;
   background-color: #393939;
   border-radius: 8px;
   padding: 10px;
-  margin-bottom: 12px;
+  min-width: 0;
 }
 
 .manga-cover {
@@ -31,9 +51,10 @@
 
 .card-content {
   flex: 1;
-  overflow: hidden; /* Garante que o texto não vaze */
+  overflow: hidden;
 }
 
+/* Restante do CSS original permanece igual */
 .manga-title {
   font-size: 1rem;
   font-weight: 600;
@@ -71,7 +92,6 @@
 .time-ago {
   color: #777;
 }
-/* ... (mantenha o CSS anterior) ... */
 
 /* Links Clicáveis */
 .clickable-title, 
@@ -82,25 +102,147 @@
   color: inherit;
 }
 
-/* Efeito Hover para Título/Subtítulo */
+/* Efeitos Hover */
 .clickable-title:hover .manga-title {
-  color: #FFC107; /* Amarelo ao passar o mouse */
+  color: #FFC107;
 }
 
 .clickable-subtitle:hover .manga-subtitle {
-  color: #f1f1f1; /* Branco ao passar o mouse */
+  color: #f1f1f1;
 }
 
-/* Efeito Hover para Capítulos */
 .clickable-chapter:hover .chapter-container {
-  background-color: #333; /* Fundo mais escuro */
+  background-color: #333;
 }
 
 .clickable-chapter:hover .chapter-info {
-  color: #FFC107; /* Amarelo para o número do capítulo */
+  color: #FFC107;
 }
 
-/* Ajuste para manter a borda inferior no hover */
-.clickable-chapter .chapter-container {
-  transition: all 0.2s ease;
+/* Saber mais */
+.see-more {
+  text-align: right;
+  margin-top: 10px;
+}
+
+.see-more a {
+  color: #FFC107;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.see-more a:hover {
+  text-decoration: underline;
+}
+
+/* Media Query para telas menores que 700px */
+/* Versão Mobile (menos de 700px) */
+@media (max-width: 700px) {
+  .release-card {
+    width: 80%;
+    max-width: 180px; /* Largura fixa do card */
+    height: 520px; /* Altura fixa */
+    display: flex;
+    flex-direction: column;
+    background-color: #35353c;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 0 5px; /* Espaço entre cards */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    flex-shrink: 0; /* Impede que o card encolha */
+  }
+  
+  .manga-cover {
+    width: 160px; /* Largura fixa */
+    height: 210px; /* Altura fixa */
+    object-fit: cover; /* Corta a imagem mantendo proporção */
+    object-position: center; /* Foca no centro da imagem */
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+
+  /* Restante do CSS permanece igual ao anterior */
+  .card-content {
+    padding: 12px;
+    text-align: center;
+  }
+  
+  .manga-title {
+    font-size: 0.9rem;
+    margin: 5px 0;
+    color: #f1f1f1;
+    font-weight: bold;
+    line-height: 0,8;
+  }
+  
+  .manga-subtitle {
+    font-size: 0.75rem;
+    color: #FFC107;
+    margin-bottom: 10px;
+    text-align: center;
+    font-style: italic;
+  }
+  
+  .rating {
+    display: flex;
+    justify-content: center;
+    font-size: 0.9rem;
+    color: #FFC107;
+    margin-bottom: 12px;
+  }
+  
+  .chapter-container {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 8px 0;
+    border-bottom: 1px solid #444;
+  }
+  
+  .chapter-info {
+    font-size: 0.8rem;
+    color: #f1f1f1;
+    font-weight: bold;
+  }
+  
+  .time-ago {
+    font-size: 0.7rem;
+    color: #aaa;
+  }
+}
+
+/* Container principal (mantém 800px) */
+.releases-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 15px;
+}
+
+/* Link "Saber mais" minimalista */
+.see-more {
+  max-width: 800px;
+  margin: -15px auto;
+  text-align: right;
+  padding-right: 10px;
+}
+
+.see-more a {
+  color: #aaa;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 500;
+  display: inline-block;
+  padding: 2px 5px;
+  transition: color 0.2s ease;
+}
+
+.see-more a:hover {
+  color: #f8d776;
+  text-decoration: underline;
+}
+
+/* Seta → com espaçamento */
+.see-more a::after {
+  content: " →";
+  margin-left: 3px;
 }

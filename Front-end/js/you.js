@@ -9,13 +9,13 @@ function getYouTubeId(url) {
 function setupYouTubeCards() {
   const videos = [
       {
-          url: "https://youtu.be/2vQagScADWg?si=JxsCwb5ClfrLhreq", // Primeiro capítulo
-          hoverText: "Capitulo 01",
-          title: "Capitulo 01",
-          subtitle: "Comece agora a aventura de Fernando"
+          url: "https://youtu.be/zZ6zx06wmVg?si=MScpWqz15GKLxDys", // Primeiro capítulo
+          hoverText: "",
+          title: "",
+          subtitle: ""
       },
       {
-          url: "https://youtu.be/tV_pPVXliD8?si=6LAbnbeAwQ0jXzpM", // Trailer
+          url: "https://youtu.be/2vQagScADWg?si=JxsCwb5ClfrLhreq", // Trailer
           hoverText: "",
           title: "",
           subtitle: ""

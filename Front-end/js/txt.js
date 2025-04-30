@@ -41,3 +41,27 @@ document.addEventListener('DOMContentLoaded', function() {
   // Inicia a animação
   setTimeout(typeWriter, 500);
 });
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  const texto = document.getElementById('sinopse-texto');
+  const botao = document.getElementById('ler-mais-btn');
+  
+  // Verifica se o texto precisa de truncamento
+  if (texto.scrollHeight > texto.clientHeight) {
+      botao.style.display = 'block';
+  } else {
+      botao.style.display = 'none';
+  }
+  
+  botao.addEventListener('click', function() {
+      texto.classList.toggle('expandido');
+      
+      if (texto.classList.contains('expandido')) {
+          botao.textContent = 'Ler menos';
+      } else {
+          botao.textContent = 'Ler mais';
+      }
+  });
+});
+
