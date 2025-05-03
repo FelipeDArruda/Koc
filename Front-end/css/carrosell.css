@@ -13,7 +13,7 @@
   justify-content: center; /* Centraliza horizontalmente */
   gap: 10px;
   width: 100%;
-  max-width: 710px; /* Ajuste conforme necessário */
+  max-width: 800px; /* Ajuste conforme necessário */
   margin: 0 auto; /* Centraliza o container */
 }
 
@@ -21,7 +21,7 @@
 .carrossel {
   
   width: 100%;
-  max-width: 800px; /* Largura máxima para desktop */
+  max-width: 1200px; /* Largura máxima para desktop */
   position: relative;
   overflow: hidden;
   border-radius: 5px;

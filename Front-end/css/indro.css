@@ -1,340 +1,108 @@
+/* Reset */
+
+
+/* Container principal */
 .projetos-container {
   width: 100%;
-  max-width: 800px;
-  margin: 0px auto;
-  padding: 2px;
-  font-family: 'Segoe UI', sans-serif;
-  background-color: transparent;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
-.cards-wrapper {
-  display: flex;
-  gap: 15px;
-  overflow-x: auto;
-  padding-bottom: 10px;
-}
-
-.cards-wrapper::-webkit-scrollbar {
-  height: 5px;
-}
-
-.cards-wrapper::-webkit-scrollbar-thumb {
-  background-color: #555;
-  border-radius: 10px;
-}
-
+/* Título */
 .section-title {
   color: #f1f1f1;
-  font-size: 1.5rem;
-  margin-bottom: 15px;
-  padding-left: 10px;
-  font-weight: 600;
+  font-size: 2.8rem;
+  margin-bottom: 40px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-weight: 700;
 }
 
-.release-card {
-  flex: 0 0 calc(50% - 8px);
+/* Container dos cards */
+.cards-wrapper {
   display: flex;
-  flex-direction: row; /* Padrão: imagem ao lado do conteúdo */
-  gap: 12px;
-  background-color: #393939;
+  gap: 30px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Card do livro */
+.book-card {
+  position: relative;
+  width: 180px;
+  height: 250px;
   border-radius: 8px;
-  padding: 10px;
-  min-width: 0;
+  overflow: hidden;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.manga-cover {
-  width: 120px;
-  height: 165px;
+.book-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.4);
+}
+
+/* Capa do livro */
+.book-cover {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  border-radius: 4px;
-}
-
-.card-content {
-  flex: 1;
-  overflow: hidden;
-}
-
-/* Restante do CSS original permanece igual */
-.manga-title {
-  font-size: 1rem;
-  font-weight: 600;
-  color: #f1f1f1;
-  margin-bottom: 4px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.manga-subtitle {
-  font-size: 0.85rem;
-  color: #aaa;
-  margin-bottom: 8px;
-}
-
-.rating {
-  color: #FFC107;
-  font-size: 0.9rem;
-  margin-bottom: 10px;
-}
-
-.chapter-container {
-  display: flex;
-  justify-content: space-between;
-  font-size: 0.8rem;
-  padding: 4px 0;
-  border-bottom: 1px solid #333;
-}
-
-.chapter-container:last-child {
-  border-bottom: none;
-}
-
-.time-ago {
-  color: #777;
-}
-
-/* Links Clicáveis */
-.clickable-title, 
-.clickable-subtitle, 
-.clickable-chapter {
-  text-decoration: none;
   display: block;
-  color: inherit;
 }
 
-/* Efeitos Hover */
-.clickable-title:hover .manga-title {
-  color: #FFC107;
+/* Título do livro */
+.book-title {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0,0,0,0.8));
+  padding: 15px 10px 10px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-align: center;
+  color: white;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.8);
 }
 
-.clickable-subtitle:hover .manga-subtitle {
-  color: #f1f1f1;
-}
-
-.clickable-chapter:hover .chapter-container {
-  background-color: #333;
-}
-
-.clickable-chapter:hover .chapter-info {
-  color: #FFC107;
-}
-
-/* Saber mais */
-.see-more {
-  text-align: right;
-  margin-top: 10px;
-}
-
-.see-more a {
-  color: #FFC107;
-  text-decoration: none;
-  font-size: 0.9rem;
-}
-
-.see-more a:hover {
-  text-decoration: underline;
-}
-
-/* Media Query para telas menores que 700px */
-/* Versão Mobile (menos de 700px) */
-@media (max-width: 700px) {
-     /* CONTAINER PRINCIPAL */
-     .projetos-container {
-      max-width: 600px;
-      margin: 0 auto;
-      padding: 20px;
-  }
-  
-  /* TÍTULO */
-  .titulo-container {
-      text-align: center;
+/* Responsivo */
+@media (max-width: 768px) {
+  .section-title {
+      font-size: 2.2rem;
       margin-bottom: 30px;
   }
   
-  .titulo a {
-      color: #FFC107;
-      text-decoration: none;
-      font-size: 2rem;
-      transition: color 0.3s;
-      display: inline-block;
-  }
-  
-  .titulo a:hover {
-      color: #f8d776;
-  }
-  
-  .titulo i {
-      margin-left: 10px;
-  }
-  
-  /* CONTAINER DE ROLAGEM */
-  .cards-scroll-container {
-      width: 100%;
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
-      scrollbar-width: none;
-      padding-bottom: 15px;
-  }
-  
-  .cards-scroll-container::-webkit-scrollbar {
-      display: none;
-  }
-  
-  /* LINHA DE CARDS */
   .cards-wrapper {
-      display: inline-flex;
-      gap: 25px;
-      min-width: min-content;
-      padding: 5px;
+      gap: 20px;
   }
   
-  /* CARD INDIVIDUAL */
-  .release-card {
-      flex: 0 0 180px;
-      background-color: #35353c;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-      transition: all 0.3s ease;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 10px;
-  }
-  
-  .release-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
-  }
-  
-  /* IMAGEM */
-  .manga-cover {
-      width: 160px;
+  .book-card {
+      width: 150px;
       height: 210px;
-      object-fit: cover;
-      object-position: center;
-      border-radius: 6px;
-      margin-top: 10px;
-      border: 2px solid #2a2a2a;
-      transition: transform 0.3s;
+  }
+}
+
+@media (max-width: 530px) {
+  .section-title {
+      font-size: 1.8rem;
+      letter-spacing: 2px;
+  }
+  #imgt{
+    display: none;
+  }
+  .cards-wrapper {
+      gap: 15px;
   }
   
-  .release-card:hover .manga-cover {
-      transform: scale(1.03);
+  .book-card {
+      width: 120px;
+      height: 180px;
   }
   
-  /* CONTEÚDO DO CARD */
-  .card-content {
-      padding: 12px;
-      width: 100%;
-  }
-  
-  .manga-title {
+  .book-title {
       font-size: 1rem;
-      color: #f1f1f1;
-      margin: 5px 0;
-      text-align: center;
-      line-height: 1.2;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
+      padding: 10px 5px 8px;
   }
-  
-  .rating {
-      color: #FFC107;
-      text-align: center;
-      margin: 10px 0;
-      font-size: 0.9rem;
-  }
-  
-  .chapter-container {
-      padding: 8px 0;
-      border-bottom: 1px solid #444;
-  }
-  
-  .chapter-info {
-      font-size: 0.85rem;
-      color: #f1f1f1;
-      font-weight: bold;
-  }
-  
-  .time-ago {
-      font-size: 0.75rem;
-      color: #aaa;
-  }
-  
-  /* LINKS CLICÁVEIS */
-  .clickable-title, .clickable-chapter {
-      text-decoration: none;
-  }
-  
-  .clickable-title:hover .manga-title {
-      color: #f8d776;
-  }
-  
-  .clickable-chapter:hover .chapter-container {
-      background-color: #3e3e46;
-  }
-  
-  .clickable-chapter:hover .chapter-info {
-      color: #FFC107;
-  }
-  
-  /* RESPONSIVIDADE */
-  @media (max-width: 830px) {
-      .projetos-container {
-          padding: 20px 15px;
-      }
-  }
-  
-  @media (max-width: 700px) {
-      .release-card {
-          flex: 0 0 160px;
-      }
-      
-      .manga-cover {
-          width: 140px;
-          height: 180px;
-      }
-      
-      .cards-wrapper {
-          gap: 15px;
-      }
-  }
-}
-
-/* Container principal (mantém 800px) */
-.releases-container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 15px;
-}
-
-/* Link "Saber mais" minimalista */
-.see-more {
-  max-width: 800px;
-  margin: -15px auto;
-  text-align: right;
-  padding-right: 10px;
-}
-
-.see-more a {
-  color: #aaa;
-  text-decoration: none;
-  font-size: 0.85rem;
-  font-weight: 500;
-  display: inline-block;
-  padding: 2px 5px;
-  transition: color 0.2s ease;
-}
-
-.see-more a:hover {
-  color: #f8d776;
-  text-decoration: underline;
-}
-
-/* Seta → com espaçamento */
-.see-more a::after {
-  content: " →";
-  margin-left: 3px;
 }
