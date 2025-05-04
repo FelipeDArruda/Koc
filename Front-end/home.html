@@ -143,25 +143,25 @@
                   <p id="sinopse-texto" class="sinopse-texto">Fernando é um jovem que carrega o peso do mundo nos ombros. Entre aulas exaustivas, empregos precários e noites maldormidas, ele luta para escapar do ciclo de miséria que aprisiona sua família. Seu único farol? A faculdade — um suposto portal para um futuro melhor. Mas quando colegas invejosos arquitetam sua queda, tudo desmorona: sua vaga, sua dignidade, sua última esperança.</p>
                   
                   <button id="ler-mais-btn" class="ler-mais-btn">Ler mais</button>
-                  
-                  <div class="hero-buttons" style="margin-top: 30px;">
-                      <a href="Catalogo.html" class="btn btn-professional">
-                          <span class="btn-text">Acessar a Matriz</span>
-                          <i class="fas fa-arrow-right"></i>
-                      </a>
-                  </div>
+                  <div class="btn-container">
+                    <a href="Catalogo.html" class="btn-modern">
+                        <span class="btn-text">Acessar a Matriz</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                 
               </div>
+            
         </div>
     </div>
 </section>
   
-
+<div class="titulo-container">
+  <h1 class="titulo"><a href="./wikis.html"> Projetos <i class="fas fa-code"></i></a></h1>
+</div>
 
 <div class="projetos-container">
-  <div class="titulo-container">
-    <h1 class="titulo"><a href="./wikis.html"> Projetos <i class="fas fa-code"></i></a></h1>
-</div>
-  
+
   <div class="cards-wrapper">
       <!-- Card 1 -->
       <div class="book-card">
@@ -170,8 +170,8 @@
       </div>
       
       <!-- Card 2 -->
-      <div class="book-card">
-          <img src="img/theodora_-_pronto.png" alt="Igineris Voghal" class="book-cover">
+      <div class="book-card" id="imgtheo">
+          <img src="img/theodora_-_pronto.png "  alt="Igineris Voghal" class="book-cover">
           <div class="book-title">Theodora, alfa traidora</div>
       </div>
       
@@ -180,6 +180,11 @@
           <img src="https://illusia.com.br/wp-content/uploads/2022/01/evento-oneshot-vulcan.webp" alt="RENASCIDOS" class="book-cover">
           <div class="book-title">evento oneshot</div>
       </div>
+      <div class="book-card" id="imgt">
+        <img src="https://illusia.com.br/wp-content/uploads/2022/01/evento-oneshot-vulcan.webp" alt="RENASCIDOS" class="book-cover">
+        <div class="book-title">evento oneshot</div>
+    </div>
+    
   </div>
 </div>
 
@@ -189,7 +194,7 @@
   <div class="you-container" id="audio">
     
     <!-- Card 1 - Capítulo 1 -->
-    <div class="you-card" data-yt-id="VIDEO_ID_1">
+    <div class="you-card" data-yt-id="VIDEO_ID_1" id="card1">
       <div class="you-hover-text"></div>
       <img class="you-card-image" alt="Thumbnail do YouTube">
       <div class="you-card-content">
@@ -200,7 +205,7 @@
     </div>
 
     <!-- Card 2 - Trailer -->
-    <div class="you-card" data-yt-id="VIDEO_ID_2">
+    <div class="you-card" data-yt-id="VIDEO_ID_2" id="card2">
       <div class="you-hover-text"></div>
       <img class="you-card-image" alt="Thumbnail do YouTube">
       <div class="you-card-content">
@@ -223,17 +228,26 @@
           <!-- Abas de Navegação -->
           <div class="rank-tabs">
             <button class="tab-button active" onclick="showRank('tenentes')">RECRUTAS</button>
-            <button class="tab-button" onclick="showRank('cabos')">METRES</button>
+            <button class="tab-button" onclick="showRank('cabos')">MESTRES</button>
           </div>
           
           <!-- Conteúdo das Abas -->
           <div id="tenentes" class="rank-content" style="display: block;">
             <div class="characters-grid">
+                <!-- card1-->
               <div class="character-card">
                 <img src="img/image.png" alt="Fernando" class="character-image">
                 <h4 class="character-name">Fernando</h4>
-                <p class="character-desc">Especialista em operações táticas</p>
+                <p class="character-desc">Estrategista de guerra</p>
               </div>
+                <!-- card2-->
+              <div class="character-card">
+                <img src="img/\cola_atack_Young_redhead_archer_magic_4K_HD_HQ_illustration_dig_a11087cb-b79f-46be-b9b4-8385e21ee07d-1.png" alt="Fernando" class="character-image">
+                <h4 class="character-name">Emily</h4>
+                <p class="character-desc">Grita pra krlh</p>
+              </div>
+                <!-- card3-->
+
               <div class="character-card">
                 <img src="css/image.png" alt="Theodora" class="character-image">
                 <h4 class="character-name">Karol</h4>
@@ -250,7 +264,7 @@
                 <p class="character-desc">Maga de gelo</p>
               </div>
               <div class="character-card">
-                <img src="img/undefined_image_68.png" class="character-image">
+                <img src="img/undefined_image_47.png" class="character-image">
                 <h4 class="character-name">RAUL</h4>
                 <p class="character-desc">Comunicações</p>
               </div>

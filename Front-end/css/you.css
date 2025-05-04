@@ -3,7 +3,7 @@
   flex-wrap: wrap; /* Permite que os itens quebrem para linha seguinte */
   justify-content: center;
   gap: 20px;
-  max-width: 800px; /* Largura máxima */
+  max-width: 1000px; /* Largura máxima */
   width: 100%; /* Ocupa 100% até 800px */
   margin: -15px auto;
   padding: 20px;
@@ -100,4 +100,37 @@
 
 .you-card:hover .you-hover-text {
   opacity: 1;
+}
+@media (max-width: 700px) {
+  #card1{
+    display: none
+    ;
+  }
+ 
+  }
+  @media (max-width: 440px) {
+    .you-card {
+      position: relative;
+      width: 100%; /* Ocupa toda a largura do container em telas pequenas */
+      max-width: 300px; /* Largura máxima de cada card */
+      height: 150px;
+      overflow: hidden;
+      border-radius: 8px;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+      transition: transform 0.3s;
+      cursor: pointer;
+    }
+}
+@media (max-width: 360px) {
+  .you-card {
+    position: relative;
+    width: 100%; /* Ocupa toda a largura do container em telas pequenas */
+    max-width: 200px; /* Largura máxima de cada card */
+    height: 100px;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s;
+    cursor: pointer;
+  }
 }

@@ -6,7 +6,7 @@
   width: 100%;
   max-width: 1000px;
   margin: 0 auto;
-  padding: 20px;
+  padding:  0px 0px 10px 0px;
 }
 
 /* Título */
@@ -78,9 +78,15 @@
       gap: 20px;
   }
   
+
   .book-card {
-      width: 150px;
-      height: 210px;
+    position: relative;
+    width: 120px;
+    height: 170px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
 }
 
@@ -89,20 +95,41 @@
       font-size: 1.8rem;
       letter-spacing: 2px;
   }
-  #imgt{
-    display: none;
-  }
+ 
   .cards-wrapper {
       gap: 15px;
   }
   
   .book-card {
-      width: 120px;
-      height: 180px;
+    width: 120px;
+    height: 180px;
   }
   
   .book-title {
       font-size: 1rem;
       padding: 10px 5px 8px;
+  }
+}
+@media (max-width: 435px) {
+#imgt{
+  display: none;
+}
+.book-card {
+  position: relative;
+  width: 120px;
+  height: 180px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.cards-wrapper{
+  padding: 10px;
+}
+
+}
+@media (max-width: 320px) {
+  #imgtheo{
+    display: none;
   }
 }

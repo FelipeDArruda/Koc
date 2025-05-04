@@ -29,7 +29,13 @@
   display: none;
 }
 
-@media (min-width: 800px) {
+@media (max-width: 800px) {
+  .titulo-principal {
+    font-size: 2.3rem;
+    color: white;
+    margin-bottom: 20px;
+    min-height: 50px;
+  }
   .divisor-central {
     display: block;
     width: 50%;
@@ -45,5 +51,23 @@
   from { opacity: 0; }
   to { opacity: 1; }
 }
+@media (max-width: 530px) {
+  .titulo-principal {
+    font-size: 2rem;
+    color: white;
+    margin-bottom: 20px;
+    min-height: 50px;
+    font-size: 600;
+  }
 
+}
+@media (max-width: 360px) {
+  .titulo-principal {
+    font-size: 1.5rem;
+    color: white;
+    margin-bottom: 20px;
+    min-height: 50px;
+    font-size: 600;
+  }
 
+}

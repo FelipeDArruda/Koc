@@ -1,0 +1,49 @@
+:root {
+  --primary-color: #4361ee;
+  --primary-hover: #3a56d4;
+  --text-color: #ffffff;
+  --transition-speed: 0.3s;
+}
+
+/* Contêiner do botão (ajuste a altura se necessário) */
+.btn-container {
+  position: relative; /* Fundamental para o posicionamento absoluto do botão */
+  height: 100px; 
+}
+/* Estilo base do botão */
+.btn-modern {
+  /* POSICIONAMENTO (EDITE AQUI) */
+  position: absolute;
+ 
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 28px;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  font-family: 'Segoe UI', Roboto, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 50px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+  transition: all var(--transition-speed) ease;
+  overflow: hidden;
+  border: none;
+  cursor: pointer;
+}
+@media (max-width: 700px) {
+  .btn-modern {
+    position: absolute;
+    top: 10%;
+    left: 40%;     
+}
+}
+@media (max-width: 420px) {
+  .btn-modern {
+    position: absolute;
+    top: 10%;
+    left: 20%;     
+}
+}
+
