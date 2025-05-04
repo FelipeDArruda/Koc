@@ -8,6 +8,8 @@
   <link rel="stylesheet" href="css/Header-login.css">
   <link rel="stylesheet" href="css/catalog.css">
   <link rel="stylesheet" href="css/catalog-cap.css">
+  <link rel="stylesheet" href="css/capart.css">
+
   <link rel="stylesheet" href="css/footer.css">
 
 
@@ -123,16 +125,34 @@
             </div>
             
             <div class="book-actions">
-                <button class="btn btn-primary">
-                    <i class="fas fa-book-open"></i> Ler Agora
-                </button>
-                <button class="btn btn-outline">
-                    <i class="far fa-bookmark"></i> Favoritar
-                </button>
-                <button class="btn btn-outline">
-                    <i class="fas fa-share-alt"></i> Compartilhar
-                </button>
-            </div>
+              <button class="btn btn-primary">
+                  <i class="fas fa-book-open"></i><a href="list-cap-koc/cap-01.html">Ler Agora</a>
+              </button>
+              <button class="btn btn-outline">
+                  <i class="far fa-bookmark"></i> Favoritar
+              </button>
+              <button class="btn btn-outline share-btn">
+                  <i class="fas fa-share-alt"></i> Compartilhar
+              </button>
+          </div>
+          
+          <!-- Modal de Compartilhamento (adicione no final do body) -->
+          <div class="share-modal hidden">
+              <div class="share-options">
+                  <button class="share-option">
+                      <i class="fab fa-facebook"></i> Facebook
+                  </button>
+                  <button class="share-option">
+                      <i class="fab fa-twitter"></i> Twitter
+                  </button>
+                  <button class="share-option">
+                      <i class="fab fa-whatsapp"></i> WhatsApp
+                  </button>
+                  <button class="share-option" id="copy-link">
+                      <i class="fas fa-link"></i> Copiar Link
+                  </button>
+              </div>
+          </div>
             
             <div class="book-description">
                 <h3>Sinopse</h3>
@@ -282,6 +302,8 @@
   <script src="js/menu.js"></script>
   <script src="js/header-login.js"></script>
   <script src="js/lista.js"></script>
+  <script src="js/compart.js"></script>
+
 
 
 </body>
