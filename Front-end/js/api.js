@@ -1,154 +1,128 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Elementos
+    // Elementos do DOM
     const settingsToggle = document.getElementById('settings-toggle');
     const settingsMenu = document.getElementById('settings-menu');
-    const fontDecrease = document.getElementById('font-decrease');
-    const fontIncrease = document.getElementById('font-increase');
-    const fontSizeDisplay = document.getElementById('font-size-display');
-    const themeButtons = document.querySelectorAll('.theme-btn');
-    const fontFamilyButtons = document.querySelectorAll('.font-family-btn');
-    const lineHeightButtons = document.querySelectorAll('.line-height-btn');
-    const layoutButtons = document.querySelectorAll('.layout-btn');
-    const readingContainer = document.querySelector('.reading-container');
+    const menuButton = document.querySelector('.menu-button');
+    const dropdownMenu = document.querySelector('.settings-menu');
+    const chapterText = document.getElementById('chapter-text');
     
-    // Tamanho da fonte
-    let fontSize = 18;
+    // Conteúdo do capítulo
+    const chapterContent = `
+        <p>In the vast continent of Azure, where magic and martial arts coexisted, there was a small town called Maple Town.</p>
+        <p>In this town, there was a young man named Ethan, who was known as the "useless" son of the town's blacksmith.</p>
+        <p>Ethan had a secret - he possessed a unique ability called "Refinement". This ability allowed him to refine anything, be it weapons, potions, or even his own body.</p>
+        <p>On this particular day, Ethan was in his father's smithy, staring at a rusty old sword that a customer had brought in for repairs.</p>
+        <p>"Let's see what this refinement ability can do," Ethan muttered as he placed his hands on the sword.</p>
+        <p>A soft golden glow emanated from his palms, enveloping the sword. The rust began to disappear, and the blade started shining as if it were brand new.</p>
+        <p>But Ethan didn't stop there. He focused harder, pouring more of his energy into the sword. The blade began to glow with a faint blue hue - a sign that it had been enhanced beyond its original quality.</p>
+        <p>"Interesting," Ethan said, examining the now-sharp blade that could easily cut through iron. "This ability is more powerful than I thought."</p>
+        <p>Little did he know that this simple act would set him on a path that would change his life forever...</p>
+    `;
     
-    // Mostrar/ocultar menu de configurações
-    settingsToggle.addEventListener('click', function() {
-        settingsMenu.classList.toggle('show');
-    });
-    
-    // Diminuir fonte
-    fontDecrease.addEventListener('click', function() {
-        if (fontSize > 12) {
-            fontSize--;
-            updateFontSize();
-        }
-    });
-    
-    // Aumentar fonte
-    fontIncrease.addEventListener('click', function() {
-        if (fontSize < 24) {
-            fontSize++;
-            updateFontSize();
-        }
-    });
-    
-    function updateFontSize() {
-        document.documentElement.style.setProperty('--font-size', fontSize + 'px');
-        fontSizeDisplay.textContent = fontSize;
-        saveSettings();
-    }
-    
-    // Trocar tema
-    themeButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            themeButtons.forEach(btn => btn.classList.remove('active'));
-            this.classList.add('active');
+    chapterText.innerHTML = chapterContent;
+
+    // Menu Dropdown
+    if (menuButton && dropdownMenu) {
+        menuButton.addEventListener('click', function(e) {
+            e.stopPropagation();
+            dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+        });
+
+        // Fechar menu ao clicar fora
+        document.addEventListener('click', function() {
+            dropdownMenu.style.display = 'none';
+        });
+
+        // Prevenir que o clique no menu feche ele
+        dropdownMenu.addEventListener('click', function(e) {
+            e.stopPropagation();
+        });
+
+        // Configurações do Menu
+        const menuOptions = {
+            // Font Family
+            'arial': function() {
+                document.body.style.fontFamily = 'Arial, sans-serif';
+                updateActiveOption('font-family', this);
+            },
             
-            const theme = this.dataset.theme;
-            if (theme === 'light') {
-                document.body.classList.add('light-theme');
-            } else {
-                document.body.classList.remove('light-theme');
+            // Font Size
+            'font-18': function() {
+                document.body.style.fontSize = '18px';
+                updateActiveOption('font-size', this);
+            },
+            
+            // Line Height
+            'line-180': function() {
+                document.body.style.lineHeight = '1.8';
+                updateActiveOption('line-height', this);
+            },
+            
+            // Full Frame
+            'full': function() {
+                document.querySelector('.reading-container').style.maxWidth = '100%';
+                updateActiveOption('frame-size', this);
+            },
+            'normal': function() {
+                document.querySelector('.reading-container').style.maxWidth = '800px';
+                updateActiveOption('frame-size', this);
+            },
+            'small': function() {
+                document.querySelector('.reading-container').style.maxWidth = '600px';
+                updateActiveOption('frame-size', this);
+            },
+            
+            // Line Breaks
+            'no-breaks': function() {
+                document.querySelectorAll('.chapter-content p').forEach(p => {
+                    p.style.marginBottom = '0';
+                });
+                updateActiveOption('line-breaks', this);
+            },
+            'with-breaks': function() {
+                document.querySelectorAll('.chapter-content p').forEach(p => {
+                    p.style.marginBottom = '1.5em';
+                });
+                updateActiveOption('line-breaks', this);
             }
-            
-            saveSettings();
-        });
-    });
-    
-    // Trocar família da fonte
-    fontFamilyButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            fontFamilyButtons.forEach(btn => btn.classList.remove('active'));
-            this.classList.add('active');
-            
-            const fontFamily = this.dataset.font;
-            document.documentElement.style.setProperty('--font-family', fontFamily);
-            
-            saveSettings();
-        });
-    });
-    
-    // Trocar altura da linha
-    lineHeightButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            lineHeightButtons.forEach(btn => btn.classList.remove('active'));
-            this.classList.add('active');
-            
-            const lineHeight = this.dataset.lineHeight;
-            document.documentElement.style.setProperty('--line-height', lineHeight + '%');
-            
-            saveSettings();
-        });
-    });
-    
-    // Trocar layout
-    layoutButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            layoutButtons.forEach(btn => btn.classList.remove('active'));
-            this.classList.add('active');
-            
-            const layout = this.dataset.layout;
-            readingContainer.classList.remove('full', 'normal', 'small');
-            readingContainer.classList.add(layout);
-            
-            saveSettings();
-        });
-    });
-    
-    // Fechar menu quando clicar fora
-    document.addEventListener('click', function(event) {
-        if (!settingsToggle.contains(event.target) && !settingsMenu.contains(event.target)) {
-            settingsMenu.classList.remove('show');
-        }
-    });
-    
-    // Salvar configurações no localStorage
-    function saveSettings() {
-        const settings = {
-            fontSize: fontSize,
-            theme: document.querySelector('.theme-btn.active').dataset.theme,
-            fontFamily: document.querySelector('.font-family-btn.active').dataset.font,
-            lineHeight: document.querySelector('.line-height-btn.active').dataset.lineHeight,
-            layout: document.querySelector('.layout-btn.active').dataset.layout
         };
         
-        localStorage.setItem('readerSettings', JSON.stringify(settings));
+        // Ativar opções do menu
+        document.querySelectorAll('.menu-option').forEach(option => {
+            option.addEventListener('click', function() {
+                const action = this.dataset.action;
+                if (action && menuOptions[action]) {
+                    // Remove active class from siblings
+                    const parent = this.closest('.menu-section');
+                    parent.querySelectorAll('.menu-option').forEach(opt => {
+                        opt.classList.remove('active');
+                    });
+                    
+                    // Add active class to clicked option
+                    this.classList.add('active');
+                    
+                    // Execute the action
+                    menuOptions[action]();
+                }
+            });
+        });
     }
-    
-    // Carregar configurações salvas
-    function loadSettings() {
-        const savedSettings = localStorage.getItem('readerSettings');
-        if (savedSettings) {
-            const settings = JSON.parse(savedSettings);
-            
-            // Aplicar configurações
-            fontSize = settings.fontSize;
-            updateFontSize();
-            
-            document.querySelector(`.theme-btn[data-theme="${settings.theme}"]`).click();
-            document.querySelector(`.font-family-btn[data-font="${settings.fontFamily}"]`).click();
-            document.querySelector(`.line-height-btn[data-line-height="${settings.lineHeight}"]`).click();
-            document.querySelector(`.layout-btn[data-layout="${settings.layout}"]`).click();
-        }
-    }
-    
-    // Inicializar
-    loadSettings();
-});
 
-function formatarTexto() {
-    let conteudo = document.getElementById('texto-conteudo').innerText;
-    
-    // Adiciona <p> e <br>
-    let formatado = conteudo
-      .split(/\n\s*\n/)  // Divide em parágrafos (quebra dupla)
-      .map(p => p.trim())
-      .filter(p => p.length > 0)
-      .map(p => `<p>${p.replace(/\n/g, '<br>')}</p>`)
-      .join('\n');
-    
-    document.getElementById('texto-conteudo').innerHTML = formatado;
-  }
+    // Configurações do Botão de Engrenagem (se existir)
+    if (settingsToggle && settingsMenu) {
+        settingsToggle.addEventListener('click', function(e) {
+            e.stopPropagation();
+            settingsMenu.classList.toggle('show');
+        });
+
+        // Fechar menu ao clicar fora
+        document.addEventListener('click', function() {
+            settingsMenu.classList.remove('show');
+        });
+
+        // Prevenir que o clique no menu feche ele
+        settingsMenu.addEventListener('click', function(e) {
+            e.stopPropagation();
+        });
+    }
+});

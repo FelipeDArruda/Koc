@@ -1,0 +1,227 @@
+  /* Seção de Capítulos */
+  .chapters-container {
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    padding: 20px;
+}
+
+.chapters-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.chapters-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--premium-color);
+}
+
+.chapters-filter {
+    display: flex;
+    gap: 10px;
+}
+
+.filter-btn {
+    padding: 6px 12px;
+    border-radius: 4px;
+    background: none;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s;
+    color: #f9f9f9;
+}
+
+.filter-btn.active {
+    background-color: var();
+    color: white;
+    border-color: var(--primary-color);
+}
+
+.chapters-list {
+    margin-bottom: 30px;
+}
+
+.chapter-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 15px;
+    border-bottom: 1px solid #eee;
+    transition: background-color 0.3s;
+}
+
+.chapter-item:hover {
+    background-color: #dddddd1c;
+}
+
+.chapter-num {
+    width: 50px;
+    font-weight: 600;
+    color: var(--gray-color);
+}
+
+.chapter-title {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.chapter-title-text {
+    margin-right: 10px;
+}
+
+.badge-free {
+    background-color: #28a745;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.badge-premium {
+    background-color: var(--premium-color);
+    color: #000;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.chapter-date {
+    width: 100px;
+    text-align: center;
+    color: var(--gray-color);
+    font-size: 14px;
+}
+
+.chapter-words {
+    width: 80px;
+    text-align: center;
+    color: var(--gray-color);
+    font-size: 14px;
+}
+
+.chapter-action {
+    width: 100px;
+    text-align: center;
+}
+
+.read-btn {
+    padding: 6px 12px;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 4px;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.read-btn:hover {
+    background-color: #2a75e6;
+}
+
+/* Paginação */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.page-btn {
+    width: 40px;
+    height: 40px;
+    margin: 0 5px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.page-btn:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.page-btn.active {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+.page-btn.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.page-dots {
+    margin: 0 5px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .book-header {
+        flex-direction: column;
+    }
+    
+    .book-cover {
+        width: 100%;
+        padding: 20px 0;
+    }
+    
+    .book-info {
+        padding: 20px;
+    }
+    
+    .chapter-item {
+        flex-wrap: wrap;
+        padding: 15px 10px;
+    }
+    
+    .chapter-num, .chapter-date, .chapter-words, .chapter-action {
+        width: auto;
+        margin: 5px 0;
+    }
+    
+    .chapter-title {
+        width: 100%;
+        order: 1;
+        margin-bottom: 10px;
+    }
+    
+    .chapter-num {
+        order: 0;
+        margin-right: 15px;
+    }
+    
+    .chapter-date {
+        order: 2;
+        margin-right: 15px;
+    }
+    
+    .chapter-words {
+        order: 3;
+    }
+    
+    .chapter-action {
+        order: 4;
+        width: 100%;
+        margin-top: 10px;
+        text-align: left;
+    }
+    
+    .read-btn {
+        display: block;
+        text-align: center;
+    }
+}
