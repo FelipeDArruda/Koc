@@ -131,28 +131,45 @@
               <button class="btn btn-outline">
                   <i class="far fa-bookmark"></i> Favoritar
               </button>
-              <button class="btn btn-outline share-btn">
+              <button class="btn btn-outline" id="share-button">
                   <i class="fas fa-share-alt"></i> Compartilhar
               </button>
           </div>
           
-          <!-- Modal de Compartilhamento (adicione no final do body) -->
-          <div class="share-modal hidden">
-              <div class="share-options">
-                  <button class="share-option">
-                      <i class="fab fa-facebook"></i> Facebook
-                  </button>
-                  <button class="share-option">
-                      <i class="fab fa-twitter"></i> Twitter
-                  </button>
-                  <button class="share-option">
-                      <i class="fab fa-whatsapp"></i> WhatsApp
-                  </button>
-                  <button class="share-option" id="copy-link">
-                      <i class="fas fa-link"></i> Copiar Link
-                  </button>
-              </div>
-          </div>
+          <!-- Popup de Compartilhamento (simples e funcional) -->
+          <div class="share-modal" id="share-modal" aria-hidden="true">
+            <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="share-modal-title">
+                <div class="modal-header">
+                    <h5 id="share-modal-title">Compartilhar</h5>
+                    <button class="close-modal" aria-label="Fechar">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="share-options">
+                        <button class="share-option" data-social="facebook">
+                            <span class="social-icon"><i class="fab fa-facebook-f"></i></span>
+                            <span class="social-label">Facebook</span>
+                        </button>
+                        <button class="share-option" data-social="twitter">
+                            <span class="social-icon"><i class="fab fa-twitter"></i></span>
+                            <span class="social-label">Twitter</span>
+                        </button>
+                        <button class="share-option" data-social="whatsapp">
+                            <span class="social-icon"><i class="fab fa-whatsapp"></i></span>
+                            <span class="social-label">WhatsApp</span>
+                        </button>
+                        <button class="share-option" data-social="copy">
+                            <span class="social-icon"><i class="fas fa-link"></i></span>
+                            <span class="social-label">Copiar link</span>
+                        </button>
+                    </div>
+                    <div class="share-url">
+                        <input type="text" id="share-url-input" readonly value="">
+                        <button id="copy-url-btn">Copiar</button>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-overlay"></div>
+        </div>
             
             <div class="book-description">
                 <h3>Sinopse</h3>
