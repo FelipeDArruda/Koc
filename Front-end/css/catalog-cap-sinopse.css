@@ -1,0 +1,32 @@
+.book-description {
+  max-width: 600px;
+  margin: 20px auto;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+/* Classe que corta o texto em 3 linhas */
+.sinopse-cortada {
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Limita a 3 linhas */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Classe que mostra o texto completo */
+.sinopse-completa {
+  display: block;
+}
+
+#ler-mais-btn {
+  background: none;
+  border: none;
+  color: #0066cc;
+  cursor: pointer;
+  padding: 5px 0;
+  font-size: 14px;
+}
+
+#ler-mais-btn:hover {
+  text-decoration: underline;
+}

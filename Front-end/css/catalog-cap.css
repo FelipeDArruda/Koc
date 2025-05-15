@@ -173,7 +173,10 @@
     .book-header {
         flex-direction: column;
     }
-    
+    .chapters-title{
+        display: none;
+    }
+        
     .book-cover {
         width: 100%;
         padding: 20px 0;
