@@ -13,69 +13,24 @@
   padding: 0 16px 10px;
 }
 
-/* Header Manga */
-.header-mangas {
-  padding: 20px;
-  border-bottom: 1px solid #222;
-  width: 100%;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-.header-mangas h2 {
-  margin: 0;
-  font-size: 22px;
-  font-weight: 500;
+/* Título */
+.section-title {
   color: #f1f1f1;
+  font-size: 2.8rem;
+  margin-bottom: 40px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-weight: 700;
 }
 
-.result-count {
-  font-size: 16px;
-  font-weight: bold;
-  color: #ccc;
-  margin-top: 4px;
-}
-
-.filter-bar {
-  display: flex;
-  gap: 20px;
-  margin-top: 15px;
-  font-size: 14px;
-  color: #999;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.filter-bar span {
-  cursor: pointer;
-  position: relative;
-  padding-bottom: 5px;
-}
-
-.filter-bar span.active {
-  color: #a259ff;
-  font-weight: 500;
-}
-
-.filter-bar span.active::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  height: 2px;
-  width: 100%;
-  background: #a259ff;
-}
-
-/* Cards Wrapper */
+/* Container dos cards */
 .cards-wrapper {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
   justify-content: center;
   width: 100%;
-  margin: 20px auto;
-  max-width: 1200px;
 }
 
 /* Card do livro */
@@ -136,48 +91,20 @@
 
 /* Responsivo: tablets */
 @media (max-width: 768px) {
-  .section-title,
-  .header-mangas h2 {
-    font-size: 1.8rem;
+  .section-title {
+    font-size: 2.4rem;
+    margin-bottom: 30px;
   }
 
-  .filter-bar {
-    gap: 12px;
+  .books-wrapper,
+  .cards-wrapper {
+    gap: 16px;
   }
 
   .book-card {
     flex: 1 1 calc(50% - 16px);
+    max-width: none;
     aspect-ratio: 3 / 4;
   }
 }
 
-/* Responsivo: mobile */
-@media (max-width: 480px) {
-  .header-mangas {
-    padding: 16px;
-  }
-
-  .header-mangas h2 {
-    font-size: 1.4rem;
-  }
-
-  .result-count {
-    font-size: 14px;
-  }
-
-  .filter-bar {
-    gap: 8px;
-    font-size: 12px;
-    justify-content: flex-start;
-  }
-
-  .book-card {
-    flex: 1 1 100%;
-    aspect-ratio: 2.5 / 3;
-  }
-
-  /* Opcional: esconder terceiro card em telas muito pequenas */
-  #imgt {
-    display: none;
-  }
-}
