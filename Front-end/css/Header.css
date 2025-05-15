@@ -94,6 +94,9 @@ body {
   border-radius: 2px;
   transition: all 0.3s ease;
 }
+.discord{
+  display: none;
+}
 
 /* --- VERSÃO MOBILE (até 768px) --- */
 @media screen and (max-width: 768px) {
@@ -101,6 +104,9 @@ body {
     display: flex;
     order: 2; /* Posiciona à direita */
   }
+  .discord{
+  display: block;
+}
 
   .menu-items {
     position: fixed;

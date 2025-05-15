@@ -1,22 +1,18 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Leitor de Webnovel</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!DOCTYPE html>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <link rel="stylesheet" href="/Koc/Front-end//css/Header.css">
-  <link rel="stylesheet" href="/Koc/Front-end//css/Header-login.css">
-    <link rel="stylesheet" href="/Koc/Front-end/css/navegação.css">
-    <link rel="stylesheet" href="/Koc/Front-end/css/menu.css">
-    <link rel="stylesheet" href="/Koc/Front-end/css/cap-text.css">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="img/img/KnightOfChaosLogo-2 (1).png" type="image/x-icon">
+  <link rel="stylesheet" href="Projetos-global.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <title>Koc</title>
 
 </head>
-<body class="dark-theme">
+
+<body>
   <header class="navbar" id="mainHeader">
     <div class="navbar-container container">
       <div class="menu-left">
@@ -27,15 +23,16 @@
         </div>
         <ul class="menu-items" id="menu-items">
           <!-- Link de Login ATUALIZADO -->
-
-          <li><a href="./wikis.html"><i class="fas fa-book"></i> Wiki's</a></li>
           <li><a href="./projetos.html"><i class="fas fa-code"></i> Projetos</a></li>
+          <li><a href="./wikis.html"><i class="fas fa-book"></i> Wiki's</a></li>
           <li><a href="#audio"><i class="fas fa-headphones" ></i> Audiobook</a></li>
-          <li><a href="#login-modal" class="login-trigger js-login-trigger"><i class="fas fa-user"></i> Login</a></li>
+          
+          <li><a href="#login-modal" 
+            class="login-trigger js-login-trigger"><i class="fas fa-user"></i> Login</a></li>
         </ul>
       </div>
       <div class="login-logo">
-      <a href="/Koc/Front-end/home.html">  <img src="/Koc/Front-end/img/KnightOfChaosLogo-2 (1).png" alt="Logo" width="90" height="65"></a>
+        <a href="home.html"><img src="img/img/KnightOfChaosLogo-2 (1).png" alt="Logo" width="99" height="65"></a>
       </div>
     </div>
   </header>
@@ -85,48 +82,41 @@
       </div>
     </div>
   </div>
-
-       <!-- Barra de Navegação -->
-       <nav class="chapter-navigation">
-        <button class="nav-button prev-button">
-            <i class="fas fa-chevron-left"></i> <a href="cap-01.html">Anteior</a>
-        </button>
-
-        <div class="menu-container">
-            <button class="menu-button">
-                Menu
-            </button>
-            <div class="settings-menu">
-              
-              <div class="menu-section">
-                  <h4>Largura</h4>
-                  <button class="menu-option" data-action="full">Total</button>
-                  <button class="menu-option active" data-action="normal">● Normal</button>
-                  <button class="menu-option" data-action="small">Pequeno</button>
-              </div>
-              
-              <div class="menu-section">
-                  <h4>Sem quebras de linha</h4>
-                  <button class="menu-option" data-action="no-breaks">Sim</button>
-                  <button class="menu-option active" data-action="with-breaks">● Não</button>
-              </div>
-          </div>
-        </div>
-
-        <button class="nav-button next-button">
-            <a href="cap-03.html">Proximo</a> <i class="fas fa-chevron-right"></i>
-        </button>
-    </nav>
   
-      <!-- Área de Leitura -->
-      <div class="reading-container">
-          <article class="book-content" id="book-content">
-              <h1 class="chapter-title">Capitulo 03:  Recruta</h1>
-              <div class="chapter-content" id="chapter-text">
-                  <!-- Conteúdo será inserido pelo JavaScript -->
-              </div>
-          </article>
+<div class="header-mangas">
+    <h2>Todos os livros</h2>
+    <div class="result-count">03 RESULTADOS</div>
+    <div class="filter-bar">
+        <span class="active">Ordenado por</span>
+        <span>Últimos</span>
+        <span>A-Z</span>
+        <span>Por mais views</span>
+        <span>Novo</span>
+    </div>
+</div>
+ <div class="cards-wrapper">
+      <!-- Card 1 -->
+      <div class="book-card">
+          <img src="img/KnightOfChaosCapafix2.png" alt="Lorus Azul" class="book-cover">
+          <div class="book-title"><a href="Catalogo.html">Knight Of Chaos</a></div>
       </div>
-    <script src="/Koc/Front-end/Caps js/cap3.js"></script>
-</body>
-</html>
+      
+      <!-- Card 2 -->
+      <div class="book-card" id="imgtheo">
+          <img src="img/theodora_-_pronto.png "  alt="Igineris Voghal" class="book-cover">
+          <div class="book-title"> <a href="#">Theodora, alfa traidora</a></div>
+      </div>
+      
+      <!-- Card 3 -->
+      <div class="book-card" id="imgt">
+        <a href="Catalogo.html">  <img src="https://illusia.com.br/wp-content/uploads/2022/01/evento-oneshot-vulcan.webp" alt="RENASCIDOS" class="book-cover">
+          <div class="book-title">evento oneshot</div>
+      </div></a>
+    
+    
+  </div>
+
+
+  <script src="js/menu.js"></script>
+  <script src="js/header-login.js"></script>
+    <script src="js/login.js"></script>

@@ -110,7 +110,7 @@
       padding: 10px 5px 8px;
   }
 }
-@media (max-width: 435px) {
+@media (max-width: 390px) {
 #imgt{
   display: none;
 }
@@ -129,7 +129,21 @@
 
 }
 @media (max-width: 320px) {
-  #imgtheo{
-    display: none;
-  }
+ 
+  .cards-wrapper {
+    gap: 5px;
 }
+.cards-wrapper {
+  padding: 0px;
+}
+.book-card {
+  position: relative;
+  width: 110px;
+  height: 149px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+}
+

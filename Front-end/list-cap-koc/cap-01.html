@@ -8,8 +8,8 @@
     <!DOCTYPE html>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <link rel="stylesheet" href="/Koc/Front-end//css/Header.css">
-  <link rel="stylesheet" href="/Koc/Front-end//css/Header-login.css">
+    <link rel="stylesheet" href="/Koc/Front-end/css/Header.css">
+  <link rel="stylesheet" href="/Koc/Front-end/css/Header-login.css">
     <link rel="stylesheet" href="/Koc/Front-end/css/navegação.css">
     <link rel="stylesheet" href="/Koc/Front-end/css/menu.css">
     <link rel="stylesheet" href="/Koc/Front-end/css/cap-text.css">
@@ -35,58 +35,11 @@
         </ul>
       </div>
       <div class="login-logo">
-      <a href="/Koc/Front-end/home.html">  <img src="/Koc/Front-end/img/KnightOfChaosLogo-2 (1).png" alt="Logo" width="90" height="65"></a>
+      <a href="/Koc/Front-end/home.html">  <img src="/Front-end/img/KnightOfChaosLogo-2 (1).png" alt="Logo" width="90" height="65"></a>
       </div>
     </div>
   </header>
-  <div class="login-modal" id="login-modal">
-    <div class="modal-content">
-      <button class="close-modal" aria-label="Fechar modal">&times;</button>
 
-      <div class="login-tab">
-        <h2>Login</h2>
-        <form class="login-form">
-          <div class="form-group">
-            <label for="username">Usuário:</label>
-            <input type="text" id="username" name="username" required>
-          </div>
-          <div class="form-group">
-            <label for="password">Senha:</label>
-            <input type="password" id="password" name="password" required>
-          </div>
-          <button type="submit" class="login-btn">Entrar</button>
-          <!-- Link Cadastro - IMPORTANTE manter as classes -->
-          <p class="register-link">Não tem conta? <a href="#cadastro" class="switch-tab js-switch-tab">Cadastre-se</a></p>
-        </form>
-      </div>
-      <div class="register-tab" style="display:none">
-        <h2>Cadastro</h2>
-        <form class="register-form">
-          <div class="form-group">
-            <label for="new-username">Usuário:</label>
-            <input type="text" id="new-username" name="new-username" required>
-          </div>
-          <div class="form-group">
-            <label for="email">E-mail:</label>
-            <input type="email" id="email" name="email" required>
-          </div>
-          <div class="form-group">
-            <label for="new-password">Senha:</label>
-            <input type="password" id="new-password" name="new-password" required>
-          </div>
-          <div class="form-group">
-            <label for="confirm-password">Confirme a Senha:</label>
-            <input type="password" id="confirm-password" name="confirm-password" required>
-          </div>
-          <button type="submit" class="login-btn">Cadastrar</button>
-          <!-- Link Login - IMPORTANTE manter as classes -->
-          <p class="login-link">Já tem conta? <a href="#login" class="switch-tab js-switch-tab">Faça login</a></p>
-        </form>
-      </div>
-    </div>
-  </div>
-
-       <!-- Barra de Navegação -->
        <nav class="chapter-navigation">
         <button class="nav-button prev-button">
             <i class="fas fa-chevron-left"></i> <a href="/Koc/Front-end/Catalogo.html">Anterior</a>

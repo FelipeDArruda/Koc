@@ -34,8 +34,8 @@
 
 .about-grid {
   display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap: 100px;
+  grid-template-columns: 0.6fr 1fr;
+    gap: 50px;
   align-items: center;
   position: relative;
   z-index: 2;
@@ -161,7 +161,8 @@
   text-transform: uppercase;
   letter-spacing: 3px;
   margin-bottom: 25px;
-  font-size: 0.9rem;
+  font-size: 1rem;
+  margin-left: 10px;
 }
 
 .subtitle-accent {

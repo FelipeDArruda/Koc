@@ -25,12 +25,51 @@
 });
 
 // Paginação
-document.querySelectorAll('.page-btn:not(.disabled)').forEach(btn => {
-    btn.addEventListener('click', function() {
-        if (!this.classList.contains('active')) {
-            document.querySelector('.page-btn.active').classList.remove('active');
-            this.classList.add('active');
-            // Aqui você pode adicionar lógica para carregar a página correspondente
+
+const chaptersPerPage = 10;
+let currentPage = 1;
+
+// Exibir capítulos da página atual
+function showPage(page) {
+    const chapters = document.querySelectorAll('.chapter-item');
+    const start = (page - 1) * chaptersPerPage;
+    const end = start + chaptersPerPage;
+
+    chapters.forEach((chapter, index) => {
+        if (index >= start && index < end) {
+            chapter.style.display = 'flex';
+        } else {
+            chapter.style.display = 'none';
+        }
+    });
+
+    // Atualizar o botão ativo
+    document.querySelectorAll('.page-btn').forEach(btn => btn.classList.remove('active'));
+    document.querySelector(`.page-btn[data-page="${page}"]`)?.classList.add('active');
+
+    currentPage = page;
+}
+
+// Eventos dos botões de página
+document.querySelectorAll('.page-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        const page = btn.getAttribute('data-page');
+        if (page) {
+            showPage(parseInt(page));
         }
     });
 });
+
+// Botões anterior/próximo
+document.querySelector('.page-btn.prev').addEventListener('click', () => {
+    if (currentPage > 1) showPage(currentPage - 1);
+});
+
+document.querySelector('.page-btn.next').addEventListener('click', () => {
+    const totalPages = Math.ceil(document.querySelectorAll('.chapter-item').length / chaptersPerPage);
+    if (currentPage < totalPages) showPage(currentPage + 1);
+});
+
+// Inicialização
+showPage(1);
+

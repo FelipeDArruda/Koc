@@ -1,0 +1,49 @@
+  .header-mangas {
+            padding: 20px;
+            border-bottom: 1px solid #222;
+            width: 1000px;
+            margin: 0 auto;
+        }
+
+        .header-mangas h2 {
+            margin: 0;
+            font-size: 22px;
+            font-weight: 500;
+        }
+
+        .result-count {
+            font-size: 16px;
+            font-weight: bold;
+            color: #ccc;
+            margin-top: 4px;
+        }
+
+        .filter-bar {
+            display: flex;
+            gap: 20px;
+            margin-top: 15px;
+            font-size: 14px;
+            color: #999;
+            flex-wrap: wrap;
+        }
+
+        .filter-bar span {
+            cursor: pointer;
+            position: relative;
+            padding-bottom: 5px;
+        }
+
+        .filter-bar span.active {
+            color: #a259ff;
+            font-weight: 500;
+        }
+
+        .filter-bar span.active::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 2px;
+            width: 100%;
+            background: #a259ff;
+        }
