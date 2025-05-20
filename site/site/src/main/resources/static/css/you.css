@@ -1,0 +1,136 @@
+.you-container {
+  display: flex;
+  flex-wrap: wrap; /* Permite que os itens quebrem para linha seguinte */
+  justify-content: center;
+  gap: 20px;
+  max-width: 1000px; /* Largura máxima */
+  width: 100%; /* Ocupa 100% até 800px */
+  margin: -15px auto;
+  padding: 20px;
+  box-sizing: border-box; /* Inclui padding na largura total */
+}
+
+.you-card {
+  position: relative;
+  width: 100%; /* Ocupa toda a largura do container em telas pequenas */
+  max-width: 380px; /* Largura máxima de cada card */
+  height: 200px;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s;
+  cursor: pointer;
+}
+
+/* Media query para telas maiores onde os cards ficam lado a lado */
+@media (min-width: 700px) {
+  .you-card {
+    width: calc(50% - 10px); /* 50% do container menos metade do gap */
+  }
+}
+
+/* Restante do CSS permanece igual */
+.you-card:hover {
+  transform: scale(1.05);
+}
+
+.you-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+
+.you-card:hover .you-card-image {
+  transform: scale(1.1);
+  opacity: 0.7;
+}
+
+.you-card-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 15px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+  transform: translateY(70px);
+  transition: transform 0.5s;
+}
+
+.you-card:hover .you-card-content {
+  transform: translateY(0);
+}
+
+.you-card-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.you-card-subtitle {
+  font-size: 14px;
+  margin-bottom: 12px;
+  opacity: 0.8;
+}
+
+.you-play-button {
+  background-color: #ff0000;
+  color: white;
+  border: none;
+  padding: 8px 20px;
+  font-size: 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.you-play-button:hover {
+  background-color: #cc0000;
+}
+
+.you-hover-text {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  font-size: 12px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.you-card:hover .you-hover-text {
+  opacity: 1;
+}
+@media (max-width: 700px) {
+  #card1{
+    display: none
+    ;
+  }
+ 
+  }
+  @media (max-width: 440px) {
+    .you-card {
+      position: relative;
+      width: 100%; /* Ocupa toda a largura do container em telas pequenas */
+      max-width: 300px; /* Largura máxima de cada card */
+      height: 150px;
+      overflow: hidden;
+      border-radius: 8px;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+      transition: transform 0.3s;
+      cursor: pointer;
+    }
+}
+@media (max-width: 360px) {
+  .you-card {
+    position: relative;
+    width: 100%; /* Ocupa toda a largura do container em telas pequenas */
+    max-width: 200px; /* Largura máxima de cada card */
+    height: 100px;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s;
+    cursor: pointer;
+  }
+}
